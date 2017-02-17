@@ -1,0 +1,47 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls;
+
+type
+  TForm2 = class(TForm)
+    Image1: TImage;
+    Button1: TButton;
+    Timer1: TTimer;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+var
+  I, cislo, zvysok,x, y: Integer;
+begin
+  cislo := random(999999)+1;
+  Image1.Canvas.Font.Height := 30;
+  x := 100;
+  y := 100;
+  Image1.Canvas.Rectangle(-1, -1, Image1.Width -1, Image1.Height -1);
+  repeat
+      zvysok := cislo mod 10;
+      cislo := cislo div 10;
+      Image1.Canvas.Font.Color := RGB(random(256), random(256), random(256));
+      Image1.Canvas.TextOut(x, y, IntToStr(zvysok));
+      x := x+30;
+  until cislo=0;
+
+end;
+
+end.

@@ -1,0 +1,188 @@
+unit Aplikacia;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.CheckLst, Vcl.ComCtrls,
+  Vcl.ExtCtrls, Vcl.Grids, Vcl.Samples.Calendar, Vcl.Samples.Spin;
+
+type
+  TForm1 = class(TForm)
+    PageControl1: TPageControl;
+    TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
+    CheckListBox1: TCheckListBox;
+    Edit2: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    RichEdit1: TRichEdit;
+    Button3: TButton;
+    Button4: TButton;
+    TabSheet1: TTabSheet;
+    OpenDialog1: TOpenDialog;
+    SaveDialog1: TSaveDialog;
+    Label1: TLabel;
+    RadioGroup1: TRadioGroup;
+    Calendar1: TCalendar;
+    ComboBox1: TComboBox;
+    Label2: TLabel;
+    Button5: TButton;
+    Label3: TLabel;
+    SpinEdit1: TSpinEdit;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure CheckListBox1DrawItem(Control: TWinControl; Index: Integer;
+      Rect: TRect; State: TOwnerDrawState);
+    procedure Button4Click(Sender: TObject);
+    procedure CheckListBox1ClickCheck(Sender: TObject);
+    procedure ComboBox1Change(Sender: TObject);
+    procedure Edit2KeyPress(Sender: TObject; var Key: Char);
+    procedure Button5Click(Sender: TObject);
+    procedure CheckListBox1Click(Sender: TObject);
+    procedure CheckListBox1KeyPress(Sender: TObject; var Key: Char);
+    procedure SpinEdit1Change(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  CheckListBox1.Items.Add(Edit2.Text);
+  Edit2.Text:= '';
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  CheckListBox1.DeleteSelected;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  OpenDialog1.Execute();
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+  SaveDialog1.Execute();
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+var
+  Selected: string;
+begin
+  Selected := CheckListBox1.Items.Strings[CheckListBox1.ItemIndex];
+  Edit2.Text:= Selected;
+  ShowMessage('Nezabudnite vymazaù star˙ ˙lohu.');
+end;
+
+//pridaj zvolenu ulohu do editu na upravu
+procedure TForm1.CheckListBox1Click(Sender: TObject);
+var
+  Selected: string;
+begin
+  Selected := CheckListBox1.Items.Strings[CheckListBox1.ItemIndex];
+  Edit2.Text:= Selected;
+end;
+
+procedure TForm1.CheckListBox1ClickCheck(Sender: TObject);
+var
+  rect: TRect;
+begin
+  with CheckListBox1 do
+  begin
+    rect:=ItemRect(ItemIndex);
+    rect.Left:=15;
+    CheckListBox1DrawItem(CheckListBox1,ItemIndex,rect,[]);
+  end;
+
+end;
+
+procedure TForm1.CheckListBox1DrawItem(Control: TWinControl; Index: Integer;
+  Rect: TRect; State: TOwnerDrawState);
+
+begin
+  if CheckListBox1.Checked[Index] then
+  begin
+    CheckListBox1.Canvas.Font.Style:=[fsStrikeOut];
+    CheckListBox1.Canvas.TextRect(Rect,Rect.left,Rect.top,CheckListBox1.Items[Index]);
+  end
+  else
+  begin
+    CheckListBox1.Canvas.Font.Style:=[];
+    CheckListBox1.Canvas.TextRect(Rect,Rect.left,Rect.top,CheckListBox1.Items[Index]);
+  end;
+
+  //opravit priradovanie farieb jednotlivym polozkam
+  case RadioGroup1.ItemIndex of
+  0:
+  begin
+      CheckListBox1.Canvas.Font.Color:=clRed;
+      CheckListBox1.Canvas.TextRect(Rect,Rect.left,Rect.top,CheckListBox1.Items[Index]);
+  end;
+  1:
+  begin
+    CheckListBox1.Canvas.Font.Color:=clBlue;
+    CheckListBox1.Canvas.TextRect(Rect,Rect.left,Rect.top,CheckListBox1.Items[Index]);
+  end;
+  2:
+  begin
+    CheckListBox1.Canvas.Font.Color:=clBlack;
+    CheckListBox1.Canvas.TextRect(Rect,Rect.left,Rect.top,CheckListBox1.Items[Index]);
+  end;
+
+  end;
+end;
+
+procedure TForm1.CheckListBox1KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key= #53 then
+  begin
+    CheckListBox1.DeleteSelected;
+  end;
+end;
+
+procedure TForm1.ComboBox1Change(Sender: TObject);
+begin
+  case ComboBox1.ItemIndex of
+    0: Calendar1.Month := 1;
+    1: Calendar1.Month := 2;
+    2: Calendar1.Month := 3;
+    3: Calendar1.Month := 4;
+    4: Calendar1.Month := 5;
+    5: Calendar1.Month := 6;
+    6: Calendar1.Month := 7;
+    7: Calendar1.Month := 8;
+    8: Calendar1.Month := 9;
+    9: Calendar1.Month := 10;
+    10: Calendar1.Month := 11;
+    11: Calendar1.Month := 12;
+  end;
+end;
+
+//pridaj ulohu po stlaceni enter
+procedure TForm1.Edit2KeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key=#13 then
+  begin
+    CheckListBox1.Items.Add(Edit2.Text);
+    Edit2.Text:= '';
+  end;
+end;
+
+procedure TForm1.SpinEdit1Change(Sender: TObject);
+begin
+  Calendar1.Year:= SpinEdit1.Value;
+end;
+
+end.

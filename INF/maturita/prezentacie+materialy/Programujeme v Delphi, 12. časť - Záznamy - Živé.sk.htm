@@ -1,0 +1,1435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sk" lang="sk"><head>
+    <script src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/widgets.js" id="twitter-wjs"></script><script async="" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/cbgapi.loaded_0"></script><script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+		<meta http-equiv="X-UA-Compatible" content="IE=8">
+
+		
+		<title>Programujeme v Delphi, 12. časť - Záznamy - Živé.sk</title>
+		<meta name="description" content="Predstavte si, že pracujete na programe, ktorý plní funkciu telefónneho zoznamu. Každý záznam musí obsahovať viacero informácií o každej osobe - meno, priezvisko, tel. číslo a pod. Pre túto funkciu môžeme použiť záznamy, tzv. records.">
+		
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-language" content="sk">
+		<meta name="robots" content="index,follow">
+ 		<meta name="author" content="Azet.sk, a.s.">
+		<meta name="copyright" content="Azet.sk, a.s.">
+		<meta name="DC.Identifier" content="(SCHEME=ISSN) 1335-806X">
+		<meta name="google-site-verification" content="HwEEeqV4OC0JO5jAtUmOk8t-we2UY8UHfCiB6lby39k">
+
+		<link id="CSSSkin" rel="stylesheet" type="text/css" href="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/zive-sk-screen-com.css" media="all">
+		<!--
+		<link id="CSSMain" rel="stylesheet" type="text/css" href="/Client.StyleSheets/zive-sk-screen-pg.css?v=3" media="all"></link>
+		-->
+		<link rel="stylesheet" type="text/css" href="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/zive-sk-screen-pg.css" media="all">
+		
+		
+		<link rel="stylesheet" type="text/css" href="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/creative-20100920.css" media="all">
+		<link rel="stylesheet" type="text/css" href="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/zive-sk-print.css" media="print">
+
+		<!--[if gte IE 7]>
+		<link rel="stylesheet" type="text/css" href="/Client.StyleSheets/zive-sk-ie.css" media="all" />
+		<![endif]-->
+
+		<link rel="shortcut icon" href="http://www.zive.sk/favicon.ico" type="image/x-icon">
+		<link rel="search" type="application/opensearchdescription+xml" href="http://www.zive.sk/Client.Scripts/zive-sk-opensearch.xml" title="Hľadať na Živé.sk">
+		<link rel="alternate" type="application/rss+xml" title="RSS Živé.sk" href="http://www.zive.sk/rss/sc-47/default.aspx">
+
+		<script type="text/javascript" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/jquery-1.js"></script>
+		<script type="text/javascript" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/Controls_004.js"></script>
+		<script type="text/javascript" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/Controls_003.js"></script>
+		<script type="text/javascript" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/Controls_005.js"></script>
+		<script type="text/javascript" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/Controls_002.js"></script>
+		<script type="text/javascript" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/Controls_007.js"></script>
+		<script type="text/javascript" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/Controls_006.js"></script>
+		<script type="text/javascript" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/Controls.js"></script>
+		<script type="text/javascript" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/swfobject.js"></script>
+
+		<script gapi_processed="true" type="text/javascript" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/plusone.js"></script>
+	</head>
+
+	<body data-twttr-rendered="true"><div style="display: none; position: absolute; left: -10000px; top: -10000px;"><iframe src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/lsget.htm" name="lsgetframe" height="1" scrolling="no" width="1"></iframe></div>
+		<form method="post" action="default.aspx?section=3&amp;article=256293" id="mainFORM" enctype="multipart/form-data">
+<div>
+<input name="__EVENTTARGET" id="__EVENTTARGET" value="" type="hidden">
+<input name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" type="hidden">
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTM3Njk4OTE0MA9kFghmD2QWAmYPZBYEZg8VAjhQcm9ncmFtdWplbWUgdiBEZWxwaGksIDEyLiDEjWFzxaUgLSBaw6F6bmFteSAtIMW9aXbDqS5za/4BUHJlZHN0YXZ0ZSBzaSwgxb5lIHByYWN1amV0ZSBuYSBwcm9ncmFtZSwga3RvcsO9IHBsbsOtIGZ1bmtjaXUgdGVsZWbDs25uZWhvIHpvem5hbXUuIEthxb5kw70gesOhem5hbSBtdXPDrSBvYnNhaG92YcWlIHZpYWNlcm8gaW5mb3Jtw6FjacOtIG8ga2HFvmRlaiBvc29iZSAtIG1lbm8sIHByaWV6dmlza28sIHRlbC4gxI3DrXNsbyBhIHBvZC4gUHJlIHTDunRvIGZ1bmtjaXUgbcO0xb5lbWUgcG91xb5pxaUgesOhem5hbXksIHR6di4gcmVjb3Jkcy5kAgEPFgIeB1Zpc2libGVoFgJmDxUBAGQCAQ8WAh4EaHJlZgUuL0NsaWVudC5TdHlsZVNoZWV0cy96aXZlLXNrLXNjcmVlbi1jb20uY3NzP3Y9NGQCAg8WAh8BBS0vQ2xpZW50LlN0eWxlU2hlZXRzL3ppdmUtc2stc2NyZWVuLXBnLmNzcz92PTNkAgMPZBYCZg9kFgYCAQ9kFgICAQ9kFgJmDw8WAh8AaGRkAgMPZBYEAgIPZBYCZg9kFgRmDxUCKC9QdWJTeXN0ZW0uTnVtYmVyQ2hlY2tlci9TaG93TnVtYmVyLmFzaHg4aHR0cDovL3d3dy56aXZlLnNrL2RlZmF1bHQuYXNweD9zZWN0aW9uPTMmYXJ0aWNsZT0yNTYyOTNkAgEPZBYEAgcPFQEoL1B1YlN5c3RlbS5OdW1iZXJDaGVja2VyL1Nob3dOdW1iZXIuYXNoeGQCCQ8QDxYCHgtfIURhdGFCb3VuZGdkZBYBAgJkAgMPZBYCZg9kFgpmDxYCHwBoFgJmDxUBATBkAgEPFgIfAGgWAgIBDxYCHwEFTy9wcm9ncmFtdWplbWUtdi1kZWxwaGktMTItY2FzdC0tLXphem5hbXkvc2MtMy1hLTI1NjI5My9kZWZhdWx0LmFzcHg/c2hvd2ZvcnVtPTFkAgQPFgIfAGhkAgYPFgIfAGgWAmYPFgIfAQVPL3Byb2dyYW11amVtZS12LWRlbHBoaS0xMi1jYXN0LS0temF6bmFteS9zYy0zLWEtMjU2MjkzL2RlZmF1bHQuYXNweD9zaG93Zm9ydW09MWQCBw8WBB8BBV4vcHJvZ3JhbXVqZW1lLXYtZGVscGhpLTEyLWNhc3QtLS16YXpuYW15L3NjLTMtYS0yNTYyOTMvZGVmYXVsdC5hc3B4P3Nob3dmb3J1bT0xJmFtcDtBZGRGb3J1bT0xHgV0aXRsZQUQTm92w70gcHLDrXNwZXZva2QCBQ9kFgICAQ9kFgJmDw8WAh8AaGRkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYBBSNjdGwwMSQxODk2XzEwNTEkY3RsMDAkY2hja0F1dG9Mb2dpbi7Odqya9iv7nf00/2ZwRso4nEYv" type="hidden">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['mainFORM'];
+if (!theForm) {
+    theForm = document.mainFORM;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+	//<!-- (C)2000-2007 Gemius SA - gemiusAudience / zive.sk / ZiveskClankyABleskovky -->
+	var pp_gemius_identifier = new String('cjIwrcNm5yAamKYp_kBFo9WZTGSB.EStz0tRBN6gQan.h7');
+
+//]]>
+</script>
+<script type="text/javascript" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/current.js"></script>
+
+
+
+
+<script type="text/javascript">
+var sas_target_sd = '';
+document.write('<scr'+'ipt src="http://rsz.sk/delivery/sd2.php"></scr'+'ipt>');
+</script><script src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/sd2.php"></script>
+<script type="text/javascript">
+sas_tmstp=Math.round(Math.random()*10000000000);
+sas_pageid='34202/236476';		// Page : Zive.sk/ostatne-podstranky
+var sas_formatids = '13098,13097,13082,14739,15022';
+sas_target = '';
+rub_sc = window.location.pathname.match(/sc-([0-9]+)\//i);
+cid_a = window.location.pathname.match(/-a-([0-9]+)\//i);
+
+if (rub_sc != null && rub_sc[1]*1 > 0) {
+    sas_target += 'RUB=' + rub_sc[1] + ';';
+}
+
+if (cid_a != null && cid_a[1]*1 > 0) {
+    sas_target += 'CID=' + cid_a[1] + ';';
+}
+
+document.write('<scr'+'ipt src="http://ww651.smartadserver.com/call2/pubjall/' + sas_pageid + '/' + sas_formatids + '/' + sas_tmstp + '/' + escape(sas_target_sd + sas_target) + '?"></scr'+'ipt>');
+</script><script src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/CID256293.js"></script>
+
+
+<script type="text/javascript">
+if (typeof sas_manager != 'undefined') {
+	sas_manager.render(13098);	// Format : Neštandard 0x0
+}
+</script>
+<noscript>
+<a href="http://ww651.smartadserver.com/call/pubjumpi/34202/236476/13098/M/1368901096/?" target="_blank">
+<img src="http://ww651.smartadserver.com/call/pubi/34202/236476/13098/M/1368901096/?" border="0" alt="" /></a>
+</noscript>
+<script type="text/javascript">
+if (typeof sas_manager != 'undefined') {
+	sas_manager.render('13098_2');	// Format : Neštandard 0x0
+}
+</script>
+
+
+<!-- AHEAD START -->
+<div id="page-navigation">
+	
+	<div id="advert-ahead">
+<script type="text/javascript">
+if (typeof sas_manager != 'undefined') {
+	sas_manager.render(13097);	// Format : Screen - Top 960x200
+}
+</script>
+<noscript>
+<a href="http://ww651.smartadserver.com/call/pubjumpi/34202/236476/13097/S/1368901096/?" target="_blank">
+<img src="http://ww651.smartadserver.com/call/pubi/34202/236476/13097/S/1368901096/?" border="0" alt="" /></a>
+</noscript>
+	</div>
+	<div class="advert-label"></div>
+</div>
+<!-- AHEAD END -->
+
+<!-- HEADER START -->
+
+<!-- HEADER TOP LINKS START -->
+<div id="navigation-clip">
+	<div id="navigation">
+		
+			<span class="mnstart">Naše ďalšie projekty:</span>
+			
+	
+			<span>
+			
+			<a href="http://www.mobilmania.sk/" id="ctl01_1888_1051_ctl00_SectionList_ctl00_ref_external"> MobilMania.sk</a>
+			</span>
+		
+			<span>|</span>
+		
+			<span>
+			
+			<a href="http://www.automoto.sk/" id="ctl01_1888_1051_ctl00_SectionList_ctl02_ref_external"> AutoMoto.sk</a>
+			</span>
+		
+			<span>|</span>
+		
+			<span>
+			
+			<a href="http://www.akonapocitac.sk/" id="ctl01_1888_1051_ctl00_SectionList_ctl04_ref_external"> Ako na počítač</a>
+			</span>
+		
+			<span>|</span>
+		
+			<span>
+			
+			<a href="http://www.zive.sk/DVB-T/sc-221/default.aspx" id="ctl01_1888_1051_ctl00_SectionList_ctl06_ref_external"> Všetko o DVB-T</a>
+			</span>
+		
+			<span>|</span>
+		
+			<span>
+			
+			<a href="http://www.zive.sk/windows-8/sc-422/default.aspx" id="ctl01_1888_1051_ctl00_SectionList_ctl08_ref_external"> Všetko o Windows 8</a>
+			</span>
+		
+			<span>|</span>
+		
+			<span>
+			
+			<a href="http://www.zive.sk/notebooky/sc-295/default.aspx" id="ctl01_1888_1051_ctl00_SectionList_ctl10_ref_external"> Novinky a recenzie notebookov</a>
+			</span>
+		
+
+	</div>
+</div>
+<!-- HEADER TOP LINKS END -->
+
+<div id="page-data-background">
+
+	<div id="page-data">
+
+		<!-- HEADER STICKY SKY BANNER START -->
+		<div id="advert-stickysky">
+
+		</div>
+		<!-- HEADER STICKY SKY BANNER END -->
+
+		<div id="user-clip">
+			<a id="link-homepage-zive-sk" title="Živé.sk - Najčítanejší denník o počítačoch, IT a internete" href="http://www.zive.sk/"></a>
+
+			<!-- HEADER FULL BANNER START -->
+
+			<!-- HEADER FULL BANNER END -->
+
+			<!-- HEADER LOGON BOX START -->
+			<div id="user-data">
+				
+<div id="logon-web">
+	<span class="input-mm">
+		<input name="ctl01$1896_1051$ctl00$txtUserName" id="ctl01_1896_1051_ctl00_txtUserName" value="Prezývka" type="text">
+	</span>
+	<span class="input-mm">
+		<input name="ctl01$1896_1051$ctl00$txtPwd" id="ctl01_1896_1051_ctl00_txtPwd" type="password">
+	</span>
+	<div class="clear"></div>
+	<div>
+		<span class="button" style="float:right; margin-right: 8px;">
+			<a id="ctl01_1896_1051_ctl00_btnLogon" title="Prihlásiť" href="javascript:__doPostBack('ctl01$1896_1051$ctl00$btnLogon','')">Prihlásiť</a>
+		</span>
+		<small>
+			<input id="ctl01_1896_1051_ctl00_chckAutoLogin" name="ctl01$1896_1051$ctl00$chckAutoLogin" type="checkbox"><label for="ctl01_1896_1051_ctl00_chckAutoLogin">&nbsp;prihlásiť automaticky</label>
+			(<a href="http://klub.zive.sk/passport/UserForm.aspx?action=new" title="Registrácia">registrácia</a>)
+		</small>
+	</div>
+	<div class="clear"></div>
+</div>
+
+			</div>
+			<!-- HEADER LOGON BOX END -->
+		</div>
+
+		<!-- HEADER MAIN NAVIGATION START -->
+		<div id="main-menu">
+			<a href="http://www.zive.sk/" class="" title="Živé.sk - Najčítanejší denník o počítačoch, IT a internete">Živé.sk</a>
+			<span class="separator">|</span>
+			<a href="http://www.zive.sk/spravy/sc-259/default.aspx" class="" title="Správy Živé.sk">Správy</a>
+			<span class="separator">|</span>
+			<a href="http://www.zive.sk/recenzie/sc-292/default.aspx" class="" title="Recenzie Živé.sk">Recenzie</a>
+			<span class="separator">|</span>
+			<a href="http://www.zive.sk/publicistika/sc-253/default.aspx" class="" title="Publicistika Živé.sk">Publicistika</a>
+			<span class="separator">|</span>
+                        <a href="http://www.zive.sk/tv/sc-319/default.aspx" class="" title="Digitálna TV">Digitálna TV</a>
+			<span class="separator">|</span>
+			<a href="http://www.zive.sk/poradna/sc-20/default.aspx" class="" title="Poradňa Živé.sk">Poradňa</a>
+			<span class="separator">|</span>
+			<a href="http://forum.zive.sk/" title="Fórum Živé.sk">Fórum</a>	
+			<!--<span class="separator">|</span>
+			<a href="http://pocitace.bazar.sk/" title="Bazár Živé.sk">Bazár</a>-->	
+			<span class="separator">|</span>
+			<a href="http://www.zive.sk/videa/sc-71/default.aspx" class="" title="Videá Živé.sk">Videá</a>
+			<!--<span class="separator">|</span>-->
+			<!--<a href="http://blog.zive.sk/" title="Blogy Živé.sk">Blogy</a>-->
+			<span class="separator">|</span>
+			<a href="http://www.zive.sk/job-v-it/sc-67/default.aspx" class="" title="Job v IT">Job v IT</a>			
+			<!--<span class="separator">|</span>-->
+			<!--<a href="http://shop.zive.sk" title="Shop Živé.sk - Objavte svet nákupu..." style="color:#ffff00">E-shop</a>-->
+			<!--<a href="http://www.automoto.sk" target="_blank" title="AutoMoto">AutoMoto</a>-->
+<div style="float:right">
+<a href="https://www.facebook.com/zivesk" style="padding: 5px 0 0 0"><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/facebook_small.png" style="margin-left:-6px"></a>
+<a href="https://plus.google.com/116190427038857195656/posts" style="padding: 5px 0 0 0"><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/google_small.png" style="margin-left:-10px"></a>
+<a href="https://twitter.com/zivesk" style="padding: 5px 0 0 0"><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/twitter_small.png" style="margin-left:-9px"></a>
+</div>
+		</div>
+		<!-- HEADER MAIN NAVIGATION END -->
+
+		<div class="clear"></div>
+
+		
+
+		<div id="user-menu">
+			<!-- HEADER SEARCH BOX START -->
+			<div id="search-web">
+				<span class="input-mm" style="float:left">
+					<input value="Vyhľadávanie na Živé.sk" style="width:136px" type="text">
+				</span>
+				<span class="button" style="float:left">
+					<a title="Vyhľadávanie na Živé.sk">Hľadať</a>
+				</span>
+			</div>
+			<!-- HEADER SEARCH BOX END -->
+
+			<!-- HEADER SECONDARY NAVIGATION START -->
+			<div id="user-links">
+				<a class="rss-link" href="http://www.zive.sk/rss/sc-47/default.aspx">RSS</a>
+				
+		<b>
+		
+		<a href="http://www.zive.sk/ms-v-hokeji-2013/sc-517/default.aspx" id="ctl01_2249_1051_ctl00_SectionList_ctl00_ref_external" title="MS v hokeji 2013">MS v hokeji 2013</a>
+		</b>
+	
+		&nbsp;|&nbsp;
+	
+		
+		
+		<a href="http://www.zive.sk/DVB-T/sc-221/default.aspx" id="ctl01_2249_1051_ctl00_SectionList_ctl02_ref_external" title="Zmeny v DVB-T">Zmeny v DVB-T</a>
+		
+	
+		&nbsp;|&nbsp;
+	
+		<b>
+		
+		<a href="http://www.zive.sk/ibm---nova-era-it/sc-487/default.aspx" id="ctl01_2249_1051_ctl00_SectionList_ctl04_ref_external" target="_blank" title="IBM: Nová éra IT">IBM: Nová éra IT</a>
+		</b>
+	
+		&nbsp;|&nbsp;
+	
+		
+		
+		<a href="http://www.zive.sk/bitcoin/sc-515/default.aspx" id="ctl01_2249_1051_ctl00_SectionList_ctl06_ref_external" title="Mena Bitcoin">Mena Bitcoin</a>
+		
+	
+		&nbsp;|&nbsp;
+	
+		<b>
+		
+		<a href="http://www.zive.sk/datalan/sc-483/default.aspx" id="ctl01_2249_1051_ctl00_SectionList_ctl08_ref_external" title="Inovácie a IT trendy">Inovácie a IT trendy</a>
+		</b>
+	
+		&nbsp;|&nbsp;
+	
+		
+		
+		<a href="http://www.zive.sk/zive-e-mailom/sc-46/default.aspx?mailer=1" id="ctl01_2249_1051_ctl00_SectionList_ctl10_ref_external" title="Novinky mailom">Novinky mailom</a>
+		
+	
+		|&nbsp;
+	
+
+			</div>
+			<!-- HEADER SECONDARY NAVIGATION END -->
+		</div>
+
+		<div class="clear"></div>
+<!-- HEADER END -->
+
+		<div id="page-column-left">
+			
+
+	<div id="main-article" class="arlist-data">
+
+		<div class="arlist-data-header">
+			<small>
+				10.&nbsp; 7.&nbsp; 2003&nbsp;&nbsp;&nbsp;
+				
+				    <strong><a href="http://www.zive.sk/recenzia/sc-254/default.aspx" title="recenzia">recenzia</a></strong>					
+				
+				    &nbsp;|&nbsp;
+				
+				    <strong><a href="http://www.zive.sk/hardver/sc-230/default.aspx" title="hardvér">hardvér</a></strong>					
+				
+				    &nbsp;|&nbsp;
+				
+				    <strong><a href="http://www.zive.sk/test/sc-264/default.aspx" title="test">test</a></strong>					
+				
+			</small>
+			<h1>Programujeme v Delphi, 12. časť - Záznamy</h1>
+		</div>
+
+		<div class="arlist-data-info">
+			<span class="arlist-data-info-author">
+				Autor: <a href="http://www.zive.sk/autori/sc-44/default.aspx?author=590">Miroslav Hruška</a>
+			</span>
+			<a href="javascript:void(0)" onclick="window.print(); this.blur(); return false;">Tlač</a> <a href="javascript:void(0)" onclick="window.print(); this.blur(); return false;"><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/icon-print.gif" alt="" border="0"></a>
+			&nbsp;|&nbsp;
+			<a href="javascript:void(0)" onclick="ArticleFontSize.SetSize(1); this.blur(); return false">písmo</a>
+			<a href="javascript:void(0)" onclick="ArticleFontSize.SetSize(1); this.blur(); return false" class="font-resizer"><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/icon-size-1-active.gif" alt="+"></a><a href="javascript:void(0)" onclick="ArticleFontSize.SetSize(2); this.blur(); return false" class="font-resizer"><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/icon-size-2.gif" alt="++"></a><a href="javascript:void(0)" onclick="ArticleFontSize.SetSize(3); this.blur(); return false" class="font-resizer"><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/icon-size-3.gif" alt="+++"></a>
+
+		</div>
+
+		<div style="font-size: 100%; line-height: 1.5em;" class="arlist-data-text font-resizer-area">
+			<p><strong>Predstavte si, že pracujete na programe, ktorý plní 
+funkciu telefónneho zoznamu. Každý záznam musí obsahovať viacero 
+informácií o každej osobe - meno, priezvisko, tel. číslo a pod. Pre túto
+ funkciu môžeme použiť záznamy, tzv. records.</strong></p>
+		</div>
+
+
+		
+	
+
+		<div class="arlist-data-text with-anno">
+			
+
+				<div style="font-size: 100%; line-height: 1.5em;" class="bbtext font-resizer-area">
+				<p>Záznamy slúžia na zoskupenie viacerých údajov do jedného celku. V
+ našom prípade potrebujeme vedieť o osobe v telefónnom zozname tieto 
+informácie:</p>
+<p>* Meno<br>* Priezvisko<br>* Číslo domov<br>* Číslo na mobil</p>
+<p>Samozrejme je možné dopniť tento zoznam o čokoľvek, čo potrebujeme. 
+Ďalšou úlohou je určenie typu každého údaju. V našom príklade bude 
+najjednoduchšie určiť všetky typy ako String. </p>
+<p><strong>Pokračovanie článku nižšie</strong></p>
+				</div>
+
+				
+					<br>
+					<div align="center">
+<script type="text/javascript">
+if (typeof sas_manager != 'undefined') {
+	sas_manager.render(14739);	// Format : Square - Inline 300x300
+}
+</script>
+<noscript>
+<a href="http://ww651.smartadserver.com/call/pubjumpi/34202/236476/14739/S/1368901096/?" target="_blank">
+<img src="http://ww651.smartadserver.com/call/pubi/34202/236476/14739/S/1368901096/?" border="0" alt="" /></a>
+</noscript>
+					</div>
+					<div class="advert-label"></div>
+					<div class="clear"></div>
+					<br>
+				
+
+				<div style="font-size: 100%; line-height: 1.5em;" class="bbtext font-resizer-area">
+				<p><strong><font size="3">Deklarácia</font></strong></p>
+<p><font face="Courier">var osoba : record <br>&nbsp;&nbsp;&nbsp; Meno, Priezvisko, cDomov, cMobil: String;<br>end;</font></p>
+<p>Tímto príkazom sme vytvorili tzv. zloženú premennú s názvom osoba, 
+ktorá zoskupuje premenné s názvom Meno, Priezvisko, cDomov, cMobil.</p>
+<p><strong><font size="3">Syntax deklarácie</font></strong></p>
+<p><strong>&lt;identifikátor&gt; : record<br></strong>&nbsp; premenná_1: typ_1;<br>&nbsp; premenná_2: typ_2; <br>&nbsp;&nbsp; . <br>&nbsp;&nbsp; .<br>&nbsp;premenná_n: typ_n;<br><strong>end; </strong></p>
+<p>Jednotlivé premenné, ktoré patria do záznamu, sú uzavreté medzi 
+príkazmi record a end. V našom programe sme mali deklarované len 
+premenné typu string. Takto vypadá deklarácia rôznych typov:</p>
+<p><font face="Courier">var rozneTypy : record<br>&nbsp;&nbsp;&nbsp; i1, i2: integer;<br>&nbsp;&nbsp;&nbsp; s1, s2, s3, s4: string;<br>&nbsp;&nbsp;&nbsp; b1, b2, b3: byte;<br>end;</font></p>
+<p>Taktiež je možné deklarovať nový záznam priamo v tele deklarácie záznamu:</p>
+<p><font face="Courier">var Objekt : record<br>&nbsp;&nbsp;&nbsp;&nbsp; podObjekt : record<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; podObjekt2 : record<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x, y: Integer;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end;<br>&nbsp;&nbsp;&nbsp;&nbsp; end;<br>&nbsp;&nbsp;&nbsp; end;</font></p>
+<p><strong><font size="3">Prístup k premenným</font></strong></p>
+<p>Záznam : </p>
+<p><font face="Courier">var osoba : record <br>&nbsp;&nbsp;&nbsp; Meno, Priezvisko, cDomov, cMobil: String;<br>end;</font></p>
+<p>K premenným záznamu pristupujeme pomocou operátoru ".".</p>
+<p><font face="Courier">osoba.Meno := 'Peter';<br>osoba.Priezvisko := '';<br>osoba.cDomov := '053/227/336';<br>osoba.cMobil := '0909 332 806';</font></p>
+<p>Prístup k premenným uvedeného záznamu Objekt:</p>
+<p><font face="Courier">Objekt.podObjekt.podObjekt2.x<br>Objekt.podObjekt.podObjekt2.y</font></p>
+<p>Ďalšou dôležitou vlastnosťou záznamov je aj to, že premenné 
+deklarované vo vnútri záznamu nemajú nič spoločné s premennými, ktoré sú
+ deklarované mimo záznamu:</p>
+<p><font face="Courier">var<br>&nbsp; Form1: TForm1;<br>&nbsp;&nbsp; Bod1 : record<br>&nbsp;&nbsp;&nbsp; x, y: word;<br>&nbsp;&nbsp; end;<br>&nbsp;&nbsp;&nbsp; x, y: integer;</font></p>
+<p><strong><font size="3">Alternatívna deklarácia</font></strong></p>
+<p>Podobne ako pri poliach, aj pri záznamoch môžeme vytvoriť typ, ktorý nám môže neskôr slúžiť na deklarovanie premenných:</p>
+<p><font face="Courier">type<br>&nbsp; TBod = record<br>&nbsp;&nbsp;&nbsp; x, y: Integer;<br>&nbsp; end;<br>&nbsp; .<br>&nbsp; .<br>&nbsp; .<br>var Bod1, Bod2: TBod;</font></p>
+<p>Možno ste si všimli, že deklarovaný typ TBod sa začína písmenom T. V 
+programovaní v Delphi je to nepísané pravidlo, ktoré určuje, že ide o 
+záznam a nie o premennú. </p>
+<p><font size="3"><strong>Operácie so záznamom</strong></font></p>
+<p><font face="Courier">type<br>&nbsp; TBod = record<br>&nbsp;&nbsp;&nbsp; x, y: Integer;<br>&nbsp; end;</font></p>
+<p><font face="Courier">&nbsp; TKruh = record<br>&nbsp;&nbsp; Stred: TBod;<br>&nbsp;&nbsp; Polomer: Integer;<br>&nbsp; end;</font></p>
+<p><font face="Courier">var<br>&nbsp; Form1: TForm1;<br>&nbsp; Kruh1, Kruh2: TKruh;</font></p>
+<p>Deklarovali sme dva typy záznamov a dve premenné typu TKruh.</p>
+<p>Ak by sme chceli priradiť hodnoty premennej Kruh1 do premennej Kruh2 môžeme použiť dve možnosti:</p>
+<p><font face="Courier">Kruh1.Stred.x := Kruh2.Stred.x;<br>Kruh1.Stred.y := Kruh2.Stred.y;<br>Kruh1.Polomer := Kruh2.Polomer;</font></p>
+<p>Alebo môžeme použiť omnoho jednoduchšiu verziu:</p>
+<p><font face="Courier">Kruh1 := Kruh2;</font></p>
+<p>Záznamy môžeme taktiež používať ako argumenty funkcií a procedúr:</p>
+<p><font face="Courier">procedure ZvacsiPolomer(xKruh: TKruh; oKolko: Integer);<br>begin<br>&nbsp;inc(xKruh.Polomer,oKolko);<br>end;</font></p>
+<p><font face="Courier">function getPolomer(xKruh: TKruh): Integer;<br>begin<br>&nbsp;Result := xKruh.Polomer;<br>end;</font></p>
+<p><font size="3"><strong>Použitie príkazu With ... Do</strong></font></p>
+<p>Tento príkaz nám môže pomôcť sprehľadniť zdrojový text:</p>
+<p>&nbsp; <font face="Courier">Kruh1.Stred.x := 10;<br>&nbsp; Kruh1.Stred.y := 10;<br>&nbsp; Kruh1.Polomer := 5;</font></p>
+<p>Horné tri príkazy môžme prepísať aj takto:</p>
+<p>&nbsp;<font face="Courier">with Kruh1 do begin<br>&nbsp; Stred.x := 10;<br>&nbsp; Stred.y := 10;<br>&nbsp; Polomer := 5;<br>&nbsp;end;</font></p>
+<p>Alebo aj takto:</p>
+<p>&nbsp;<font face="Courier">with Kruh1 do begin<br>&nbsp; with Stred do begin<br>&nbsp;&nbsp; x := 10;<br>&nbsp;&nbsp; y := 10;<br>&nbsp; end;<br>&nbsp;&nbsp; Polomer := 5;<br>&nbsp;end;</font></p>
+<p>V tomto prípade sme si veľmi nepomohli, ale pri riešení zložitých záznamov sa to určite vyplatí. </p>
+<p><strong><font size="3">Funkcia sizeOf</font></strong></p>
+<p><font face="Courier">function SizeOf(X): Integer;</font></p>
+<p>Funkcia vracia veľkosť premennej v bajtoch. </p>
+<p><font face="Courier">var a:Byte;<br>&nbsp;&nbsp;&nbsp; b:Word;<br>&nbsp;&nbsp;&nbsp; x:integer;<br>begin<br>&nbsp;x := sizeOf(A); { x = 1 }<br>&nbsp;x := sizeOf(B); { x = 2 }</font></p>
+<p><strong><font size="3">Procedúra fillChar</font></strong></p>
+<p><font face="Courier">procedure FillChar(var X; Count: Integer; Value: Byte);</font></p>
+<p>Táto procedúra slúži na zaplnenie určitej oblasti pamäti hodnotou 
+Value. Počet bajtov, ktoré potrebujeme zaplniť, určuje Count. 
+Najčastejšie sa za Value dosadí hodnota 0, pričom klasické použitie 
+tejto procedúry vyzerá takto: </p>
+<p><font face="Courier">fillChar(Kruh1, sizeOf(Kruh1), 0);</font></p>
+<p>Týmto príkazom sme určenú oblasť pamäte „zaplnili“ nulami - všetky 
+číselné premenné budú obsahovať nulu, reťazce budú nulovej dĺžky a pod. 
+Pri používaní tejto procedúry treba byť opatrný pri určovaní hodnoty 
+Count, nesprávne určenie totiž môže poškodiť systém. </p>
+				</div>
+				<div class="clear"></div>
+
+			
+
+				
+					<br>
+
+					<div>
+					<div style="float:right; margin-left: 10px;"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" allowtransparency="true" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/fastbutton.htm" name="I0_1368901102817" id="I0_1368901102817" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div></div>
+
+
+
+
+					<div style="float:right;"><iframe data-twttr-rendered="true" title="Twitter Tweet Button" style="width: 109px; height: 20px;" class="twitter-share-button twitter-count-horizontal" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/tweet_button.htm" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
+
+					<script type="text/javascript">
+						document.write('<iframe name="facebook-zivesk-f" src="http://www.facebook.com/plugins/like.php?href=' + encodeURIComponent(document.URL) + '&layout=standard&show_faces=true&width=350&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:350px; height:80px"></iframe>');
+					</script><iframe name="facebook-zivesk-f" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/like.htm" allowtransparency="true" style="border:none; overflow:hidden; width:350px; height:80px" frameborder="0" scrolling="no"></iframe>
+					</div>
+					<div class="clear"></div>
+					<br>
+				
+
+		</div>
+
+		
+
+<script type="text/javascript">
+//<![CDATA[
+
+//]]>
+</script>
+
+
+		
+    
+		
+
+		
+
+		
+
+
+	</div>
+<script type="text/javascript">
+//<![CDATA[
+ArticleFontSize.SetSize();
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+	var MailForm 	= null;
+	var MailLoader 	= null;
+
+	function getTitle()
+	{
+		return document.title;
+	}
+
+	function sendMail(senderName, senderEmail, receiverEmail, comment, numCheck)
+	{
+        	var oSenderEmail 	= document.getElementById(senderEmail);
+	        var oSenderName 	= document.getElementById(senderName);
+        	var oreceiverEmail 	= document.getElementById(receiverEmail);
+        	var oComment 		= document.getElementById(comment);
+        	var onumCheck 		= document.getElementById(numCheck);
+
+		if(oSenderEmail == null || oSenderName == null || oreceiverEmail == null || onumCheck == null)
+		{
+			alert("Data sa nepodarilo odoslať.");
+			return;
+        	}
+		if(onumCheck.value == null || onumCheck.value.length == 0)
+		{
+			alert("Neopísali ste kód z obrázku");
+			return;
+		}
+		if(!validateEmail(oSenderEmail) || !validateEmail(oreceiverEmail))
+		{
+			return;
+		}
+
+		$(".ArticleByMail").addClass("CaptchaLoader");
+		$("#ArticleByMail").hide();
+
+		var sName 	= oSenderName.value;
+		var sMail 	= oSenderEmail.value;
+		var rMail 	= oreceiverEmail.value;
+		var sComment 	= oComment.value;
+		var sNumCheck 	= onumCheck.value;
+
+		sendMailToServer(sName, sMail, rMail, sComment, sNumCheck);
+	}
+
+	function ResolveCaptcha()
+	{
+		document.images["imgNumCheck"].src="/PubSystem.NumberChecker/ShowNumber.ashx?rnd=" + new Date().getTime();
+	}
+
+	function validateEmail(mailToValidate)
+	{
+		var result = true;
+		var at="@"
+		var dot="."
+		var lat=mailToValidate.value.indexOf(at)
+		var lstr=mailToValidate.value.length
+		var ldot=mailToValidate.value.indexOf(dot)
+
+		if (mailToValidate.value == null)
+        	{
+		   result = false;
+        	}
+		if (result && mailToValidate.value.indexOf(at)==-1){
+		   result = false;
+		}
+		if (result && (mailToValidate.value.indexOf(at)==-1 || mailToValidate.value.indexOf(at)==0 || mailToValidate.value.indexOf(at)==lstr)){
+		   result = false;
+		}	
+
+		if (result && (mailToValidate.value.indexOf(dot)==-1 || mailToValidate.value.indexOf(dot)==0 || mailToValidate.value.indexOf(dot)==lstr)){
+		   result = false;
+		}
+
+		if (result && mailToValidate.value.indexOf(at,(lat+1))!=-1){
+		   result = false;
+		}
+	
+		if (result && (mailToValidate.value.substring(lat-1,lat)==dot || mailToValidate.value.substring(lat+1,lat+2)==dot)){
+		   result = false;
+		}
+
+		if (result && mailToValidate.value.indexOf(dot,(lat+2))==-1){
+		   result = false;
+		}
+	
+		if (result && mailToValidate.value.indexOf(" ")!=-1){
+		   result = false;
+		}
+         	if (!result)
+		{
+	           alert("Zadajte e-mailovou adresu.");
+		   mailToValidate.focus();
+	        }
+
+ 		return result;
+	}
+
+var http_request = false;
+
+function sendMailToServer(senderName, senderEmail, receiverEmail, comment, numCheck){
+	var title = getTitle();
+	var articleUrl = 'http://www.zive.sk/default.aspx?section=3&article=256293';
+	var targetUrl = '/PubSystem.Controls.Run.Articles/sendmail.ashx'
+
+	http_request = false;
+	if (window.XMLHttpRequest) { // Mozilla, Safari,...
+		http_request = new XMLHttpRequest();
+		if (http_request.overrideMimeType) {
+         		// set type accordingly to anticipated content type
+		        http_request.overrideMimeType('text/html');
+		}
+	} else if (window.ActiveXObject) { // IE
+		try {
+			http_request = new ActiveXObject("Msxml2.XMLHTTP");
+		} catch (e) {
+			try {
+				http_request = new ActiveXObject("Microsoft.XMLHTTP");
+			} catch (e) {}
+		}
+	}
+	if (!http_request) {
+		$(".ArticleByMail").hide();
+		alert("Nelze vytvořit instanci XMLHTTP");
+		return false;
+	}
+	var parameters = "articleUrl=" + escape(encodeURI(articleUrl)) + "&title=" + escape(encodeURI(title)) + "&senderName=" + escape(encodeURI(senderName)) + "&senderEmail=" + escape(encodeURI(senderEmail)) + "&receiverEmail=" + escape(encodeURI(receiverEmail)) + "&comment=" + escape(encodeURI(comment)) + "&numCheck=" + escape(encodeURI(numCheck));
+	http_request.onreadystatechange = alertContents;
+	http_request.open('POST', targetUrl, true);
+	http_request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	http_request.setRequestHeader("Content-length", parameters.length);
+	http_request.setRequestHeader("Connection", "close");
+	http_request.send(parameters);
+}
+
+function alertContents(){
+	if (http_request.readyState == 4) {
+		$(".ArticleByMail").hide();
+		if (http_request.status == 200) {
+			alert("" + http_request.responseText);
+		} else {
+			alert("Data sa nepodarilo odoslať (chybový kód: " + http_request.status + ")");
+		}
+	}
+}
+//]]>
+</script>
+
+<div id="ctl01_2562_1051_ctl00_divFormArtNyMail" class="ArticleByMail">
+	<div id="ArticleByMail">
+		<div align="right">
+			<a href="javascript:void(0);" onclick='$(".ArticleByMail").hide();' style="text-decoration:none; color:red; font-weight: bold;">X</a>
+		</div>
+		<h2>Odporúčať článok</h2>
+		<p>
+			<b>Vaše&nbsp;meno:</b>
+			<br>
+			<input name="ctl01$2562_1051$ctl00$txtSenderName" id="ctl01_2562_1051_ctl00_txtSenderName" type="text">
+			
+		</p>
+		<p>
+			<b>Váš&nbsp;e-mail: </b>
+			<br>
+			<input name="ctl01$2562_1051$ctl00$txtSenderEmail" id="ctl01_2562_1051_ctl00_txtSenderEmail" type="text">
+		        
+		</p>
+		<p>
+			<b>E-mail&nbsp;adresáta: </b>
+			<br>
+			<input name="ctl01$2562_1051$ctl00$txtReceiverEmail" id="ctl01_2562_1051_ctl00_txtReceiverEmail" type="text">
+			
+		</p>
+		<p>
+			<b>Komentár: </b>
+			<br>
+			<textarea name="ctl01$2562_1051$ctl00$txtComment" rows="2" cols="20" id="ctl01_2562_1051_ctl00_txtComment"></textarea>
+		</p>
+		<p>
+			<input value="opíšte kód z obrázku" onfocus="this.value=''" id="numcheck" name="numcheck" type="text">
+		</p>
+	
+		<p class="button-row">
+			<img id="imgNumCheck" name="imgNumCheck" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/ShowNumber.jpg" alt="kontrolný kód">
+			<br>
+			<br>
+			
+			<a href="javascript:sendMail('ctl01_2562_1051_ctl00_txtSenderName',%20'ctl01_2562_1051_ctl00_txtSenderEmail','ctl01_2562_1051_ctl00_txtReceiverEmail','ctl01_2562_1051_ctl00_txtComment',%20'numcheck')">Odoslať</a>
+			<br>
+			<br>
+		</p>
+
+		
+
+	</div>
+</div>
+
+
+
+
+<div class="arlist-data">
+
+<div class="box box-blue">
+	<div class="box-header">
+		
+		
+		<h3>
+			Komentáre
+		</h3>
+	</div>
+
+	<div class="box-data">
+		<table class="arlist-data-forum">
+
+		</table>
+		<div class="clear"></div>
+		
+		<div>
+			Pridajte k článku svoj názor
+		</div>
+		<div align="right">
+			
+			<span class="button"><a href="http://www.zive.sk/programujeme-v-delphi-12-cast---zaznamy/sc-3-a-256293/default.aspx?showforum=1&amp;AddForum=1" title="Nový príspevok">Nový príspevok</a></span>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<br>
+
+<center>  
+  <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-5889557090831962";
+    /* Zive.sk - pod clankom */
+    google_ad_slot = "3221095600";
+    google_ad_width = 336;
+    google_ad_height = 280;
+    //-->
+  </script>
+  <script type="text/javascript" src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/show_ads.js">
+  </script>
+</center>  
+
+
+<div class="arlist-data">
+	<div class="arlist-data-text">
+		<h3>Najnovšie články na Živé.sk</h3>
+	</div>
+</div>
+
+
+
+<div class="arlist-row">
+	
+			<div class="arlist-img"><a href="http://www.zive.sk/windows-blue-bude-zadarmo-novinky-od-google/sc-3-a-309190/default.aspx" title="Windows Blue bude zadarmo, novinky od Google"><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/getthumbnail_003.jpg" alt="Windows Blue bude zadarmo, novinky od Google"></a></div>
+		
+
+	
+
+	<div class="arlist-data">
+		
+	<h2><a href="http://www.zive.sk/windows-blue-bude-zadarmo-novinky-od-google/sc-3-a-309190/default.aspx" title="Windows Blue bude zadarmo, novinky od Google">Windows Blue bude zadarmo, novinky od Google</a></h2>
+
+	
+
+	
+		<p>
+			Microsoft potvrdil ďalšie detaily o aktualizácii Windows 8, AMD predpovedá skorý koniec tabletov, Google hýril novinkami. <b>Prehľad týždňa.</b>
+		</p>
+		<p class="arlist-info">
+	
+
+			<span class="arlist-info-pane-date arlist-info-pane">pred 10 hodinami</span>
+			<span class="arlist-info-pane">&nbsp;|&nbsp;</span>
+			<span class="arlist-info-pane">Martin Kováč</span>
+			<span class="arlist-info-pane">&nbsp;|&nbsp;</span>
+			<span id="ctl01_1817_1051_ctl00_rptrData_ctl00_ForumInfo" class="arlist-info-pane"><a href="http://www.zive.sk/windows-blue-bude-zadarmo-novinky-od-google/sc-3-a-309190/default.aspx?showforum=1" class="arlist-forum-info" title="Windows Blue bude zadarmo, novinky od Google">3</a></span>
+
+	
+		</p>
+	
+
+	</div>
+	<br class="clear">
+</div>
+	
+<div class="arlist-row">
+	
+			<div class="arlist-img"><a href="http://www.zive.sk/vynovene-google-mapy-vedia-co-chce-clovek-najst/sc-3-a-309169/default.aspx" title="Vynovené Google Mapy vedia, čo chce človek nájsť"><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/getthumbnail_002.jpg" alt="Vynovené Google Mapy vedia, čo chce človek nájsť"></a></div>
+		
+
+	
+
+	<div class="arlist-data">
+		
+	<h2><a href="http://www.zive.sk/vynovene-google-mapy-vedia-co-chce-clovek-najst/sc-3-a-309169/default.aspx" title="Vynovené Google Mapy vedia, čo chce človek nájsť">Vynovené Google Mapy vedia, čo chce človek nájsť</a></h2>
+
+	
+
+	
+		<p>
+			Čím viac budete mapy používať, tým lepšie informácie získate. Pribudol aj pohľad z vesmíru. <b>video</b>
+		</p>
+		<p class="arlist-info">
+	
+
+			<span class="arlist-info-pane-date arlist-info-pane">včera</span>
+			<span class="arlist-info-pane">&nbsp;|&nbsp;</span>
+			<span class="arlist-info-pane">Lukáš Kosno</span>
+			<span class="arlist-info-pane">&nbsp;|&nbsp;</span>
+			<span id="ctl01_1817_1051_ctl00_rptrData_ctl01_ForumInfo" class="arlist-info-pane"><a href="http://www.zive.sk/vynovene-google-mapy-vedia-co-chce-clovek-najst/sc-3-a-309169/default.aspx?showforum=1" class="arlist-forum-info" title="Vynovené Google Mapy vedia, čo chce človek nájsť">5</a></span>
+
+	
+		</p>
+	
+
+	</div>
+	<br class="clear">
+</div>
+	
+<div class="arlist-row">
+	
+			<div class="arlist-img"><a href="http://www.zive.sk/pracant-s-klavesnicou-lenovo-tablet-2/sc-3-a-309166/default.aspx" title="Pracant s klávesnicou: Lenovo Tablet 2"><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/getthumbnail.jpg" alt="Pracant s klávesnicou: Lenovo Tablet 2"></a></div>
+		
+
+	
+
+	<div class="arlist-data">
+		
+	<h2><a href="http://www.zive.sk/pracant-s-klavesnicou-lenovo-tablet-2/sc-3-a-309166/default.aspx" title="Pracant s klávesnicou: Lenovo Tablet 2">Pracant s klávesnicou: Lenovo Tablet 2</a></h2>
+
+	
+
+	
+		<p>
+			<b>Prvé dojmy</b> Tablet s Windows 8, výbornou prídavnou klávesnicou a stylusom. Mohol by byť ľahkou alternatívou pracovných notebookov?
+		</p>
+		<p class="arlist-info">
+	
+
+			<span class="arlist-info-pane-date arlist-info-pane">včera</span>
+			<span class="arlist-info-pane">&nbsp;|&nbsp;</span>
+			<span class="arlist-info-pane">Matej Švantner</span>
+			<span class="arlist-info-pane">&nbsp;|&nbsp;</span>
+			<span id="ctl01_1817_1051_ctl00_rptrData_ctl02_ForumInfo" class="arlist-info-pane"><a href="http://www.zive.sk/pracant-s-klavesnicou-lenovo-tablet-2/sc-3-a-309166/default.aspx?showforum=1" class="arlist-forum-info" title="Pracant s klávesnicou: Lenovo Tablet 2">17</a></span>
+
+	
+		</p>
+	
+
+	</div>
+	<br class="clear">
+</div>
+	
+<div class="arlist-row">
+	
+			<div class="arlist-img arlist-img-type"><a href="http://www.zive.sk/google-umozni-posielat-peniaze-cez-e-mail/sc-4-a-309207/default.aspx" title="Google umožní posielať peniaze cez e-mail"><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/arttype-2.jpg" alt="Google umožní posielať peniaze cez e-mail"></a></div>
+		
+
+	
+
+	<div class="arlist-data">
+		
+	<h2 class="smaller"><a href="http://www.zive.sk/google-umozni-posielat-peniaze-cez-e-mail/sc-4-a-309207/default.aspx" title="Google umožní posielať peniaze cez e-mail">Google umožní posielať peniaze cez e-mail</a></h2>
+
+	
+
+	
+
+			<span class="arlist-info-pane-date arlist-info-pane">pred 4 hodinami</span>
+			<span class="arlist-info-pane">&nbsp;|&nbsp;</span>
+			<span class="arlist-info-pane">Martin Majerníček</span>
+			<span class="arlist-info-pane">&nbsp;|&nbsp;</span>
+			<span id="ctl01_1817_1051_ctl00_rptrData_ctl03_ForumInfo" class="arlist-info-pane"><a href="http://www.zive.sk/google-umozni-posielat-peniaze-cez-e-mail/sc-4-a-309207/default.aspx?showforum=1" class="arlist-forum-info" title="Google umožní posielať peniaze cez e-mail">4</a></span>
+
+	
+
+	</div>
+	<br class="clear">
+</div>
+	
+<div class="arlist-row">
+	
+			<div class="arlist-img arlist-img-type"><a href="http://www.zive.sk/americky-sud-zmrazil-ucty-japonskej-bitcoin-burzy-mt-gox/sc-4-a-309206/default.aspx" title="Americký súd zmrazil účty japonskej bitcoin burzy Mt. Gox"><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/arttype-2.jpg" alt="Americký súd zmrazil účty japonskej bitcoin burzy Mt. Gox"></a></div>
+		
+
+	
+
+	<div class="arlist-data">
+		
+	<h2 class="smaller"><a href="http://www.zive.sk/americky-sud-zmrazil-ucty-japonskej-bitcoin-burzy-mt-gox/sc-4-a-309206/default.aspx" title="Americký súd zmrazil účty japonskej bitcoin burzy Mt. Gox">Americký súd zmrazil účty japonskej bitcoin burzy Mt. Gox</a></h2>
+
+	
+
+	
+
+			<span class="arlist-info-pane-date arlist-info-pane">pred 4 hodinami</span>
+			<span class="arlist-info-pane">&nbsp;|&nbsp;</span>
+			<span class="arlist-info-pane">Martin Paluš</span>
+			<span class="arlist-info-pane">&nbsp;|&nbsp;</span>
+			<span id="ctl01_1817_1051_ctl00_rptrData_ctl04_ForumInfo" class="arlist-info-pane"><a href="http://www.zive.sk/americky-sud-zmrazil-ucty-japonskej-bitcoin-burzy-mt-gox/sc-4-a-309206/default.aspx?showforum=1" class="arlist-forum-info" title="Americký súd zmrazil účty japonskej bitcoin burzy Mt. Gox">4</a></span>
+
+	
+
+	</div>
+	<br class="clear">
+</div>
+	
+<div class="arlist-row">
+	
+
+	
+			<div class="arlist-img arlist-img-type"><a href="http://mobilmania.azet.sk/clanky/google-dal-microsoftu-ultimatum-youtube-ma-zmiznut/sc-3-a-1131091/default.aspx" title="Google dal Microsoftu ultimátum. YouTube má zmiznúť"><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/arttype-2.jpg" alt="Google dal Microsoftu ultimátum. YouTube má zmiznúť"></a></div>
+		
+
+	<div class="arlist-data">
+		
+	
+
+	<h2 class="smaller"><a href="http://mobilmania.azet.sk/clanky/google-dal-microsoftu-ultimatum-youtube-ma-zmiznut/sc-3-a-1131091/default.aspx" title="Google dal Microsoftu ultimátum. YouTube má zmiznúť">Google dal Microsoftu ultimátum. YouTube má zmiznúť</a></h2>
+
+	
+
+			<span class="arlist-info-pane-date arlist-info-pane">pred 4 hodinami</span>
+			<span class="arlist-info-pane">&nbsp;|&nbsp;</span>
+			<span class="arlist-info-pane"> Redakcia</span>
+			
+			
+
+	
+
+	</div>
+	<br class="clear">
+</div>
+	
+
+<div id="etarget-advert-container" class="arlist-data">
+</div>
+		</div>
+
+		<div id="page-column-right">
+
+			<div class="advert-square">
+<script type="text/javascript">
+if (typeof sas_manager != 'undefined') {
+	sas_manager.render(13082);	// Format : Square 300x300
+}
+</script>
+<noscript>
+<a href="http://ww651.smartadserver.com/call/pubjumpi/34202/236476/13082/S/1368901096/?" target="_blank">
+<img src="http://ww651.smartadserver.com/call/pubi/34202/236476/13082/S/1368901096/?" border="0" alt="" /></a>
+</noscript>
+
+
+
+			</div>
+
+<div class="advert-label"></div>
+
+<div class="advert-square">
+<script type="text/javascript">
+if (typeof sas_manager != 'undefined') {
+    sas_manager.render(15022);    // Format : Rectangle - 300x40 300x40
+}
+</script>
+<noscript>
+<a href="http://ww651.smartadserver.com/call/pubjumpi/34202/236476/15022/S/1368901096/?"
+target="_blank">
+<img src="http://ww651.smartadserver.com/call/pubi/34202/236476/15022/S/1368901096/?"
+border="0" alt="" /></a>
+</noscript>
+</div>
+
+<script type="text/javascript">
+if (typeof sas_manager != "undefined") {
+	if( sas_manager.exists(15022) ) {
+		document.write("<div class=\"advert-label\"></div>");	
+	}
+}
+</script>
+
+			
+
+			<div class="box" id="pane-changer">
+				<div class="box-tabs box-tabs-0">
+					<a href="javascript:void(0)" onclick="SetPanelContent(0); this.blur(); return false" class="tab tab-0"></a>
+					<a href="javascript:void(0)" onclick="SetPanelContent(1); this.blur(); return false" class="tab tab-1"></a>
+					<a href="javascript:void(0)" onclick="SetPanelContent(2); this.blur(); return false" class="tab tab-2"></a>
+				</div>
+				<div class="box-data">
+					
+<div class="pane-changer-content box-list">
+
+	<div class="rssitem">
+		<a href="http://www.zive.sk/ms-v-hokeji-2013-nazivo-prehlad-prenosov-na-webe/sc-3-a-308846/default.aspx" title="MS v hokeji 2013 naživo: Prehľad prenosov na webe">MS v hokeji 2013 naživo: Prehľad prenosov na webe</a>
+	</div>
+
+	<div class="rssitem">
+		<a href="http://www.zive.sk/5-mbits-dsl-za-10-eur-novy-hrac-utoci-na-telekom/sc-3-a-308994/default.aspx" title="5 Mbit/s DSL za 10 eur: Nový hráč útočí na Telekom">5 Mbit/s DSL za 10 eur: Nový hráč útočí na Telekom</a>
+	</div>
+
+	<div class="rssitem">
+		<a href="http://www.zive.sk/testovali-sme-plustelku-silna-vyzva-pre-dvb-t/sc-3-a-309087/default.aspx" title="Testovali sme Plustelku: Silná výzva pre DVB-T">Testovali sme Plustelku: Silná výzva pre DVB-T</a>
+	</div>
+
+	<div class="rssitem">
+		<a href="http://www.zive.sk/google-android-poraza-windows-8/sc-3-a-308932/default.aspx" title="Google Android poráža Windows 8">Google Android poráža Windows 8</a>
+	</div>
+
+	<div class="rssitem rssitem-lastone">
+		<a href="http://www.zive.sk/40-veci-o-slovenskom-dvb-t-ktore-by-ste-mali-vediet/sc-3-a-308985/default.aspx" title="40 vecí o slovenskom DVB-T, ktoré by ste mali vedieť">40 vecí o slovenskom DVB-T, ktoré by ste mali vedieť</a>
+	</div>
+
+</div>
+
+<div class="pane-changer-content box-list" style="display:none">
+
+<div class="rssitem">
+	<a href="http://www.zive.sk/windows-blue-bude-zadarmo-novinky-od-google/sc-3-a-309190/default.aspx" title="web | Google | správy | publicistika | internet">Windows Blue bude zadarmo, novinky od Google</a>
+	
+</div>
+
+<div class="rssitem">
+	<a href="http://www.zive.sk/testovali-sme-plustelku-silna-vyzva-pre-dvb-t/sc-3-a-309087/default.aspx" title="set-top-box | HD | Towercom | TV | iptv | test | recenzia | pokrytie | DVB-T">Testovali sme Plustelku: Silná výzva pre DVB-T</a>
+	
+</div>
+
+<div class="rssitem">
+	<a href="http://www.zive.sk/test-hp-elitepad-900-nie-je-praca-ako-praca/sc-3-a-308906/default.aspx" title="Intel | HP | HD | tablet | windows | test | recenzia | hardvér">Test HP Elitepad 900: Nie je práca ako práca</a>
+	
+</div>
+
+<div class="rssitem">
+	<a href="http://www.zive.sk/test-colorovo-citytab-vision-10-hd-displej-pod-200-eur/sc-3-a-308817/default.aspx" title="tablet | test | recenzia | hardvér">Test Colorovo CityTab Vision: 10“ HD displej pod 200 eur</a>
+	
+</div>
+
+<div class="rssitem rssitem-lastone">
+	<a href="http://www.zive.sk/prve-detaily-k-dvb-t-stanice-prijem-i-zariadenia/sc-3-a-308583/default.aspx" title="Irdeto | HD | Markíza | TV | MPEG4 | správy | publicistika | DVB-T">Prvé detaily k DVB-T: Stanice, príjem i zariadenia</a>
+	
+</div>
+
+</div>
+
+				</div>
+			</div>
+
+
+
+
+
+			
+
+<div id="tag-cloud" class="box box-no-header">
+	<div class="box-data">
+
+		<a href="http://www.zive.sk/windows-8/sc-474/default.aspx" class="cloud cloud-size-1" title="Windows 8">Windows 8</a>
+	
+		
+	
+		<a href="http://www.zive.sk/tablet/sc-410/default.aspx" class="cloud cloud-size-4" title="Tablety">Tablety</a>
+	
+		
+	
+		<a href="http://www.zive.sk/softver/sc-293/default.aspx" class="cloud cloud-size-1" title="Softvér">Softvér</a>
+	
+		
+	
+		<a href="http://www.zive.sk/tv/sc-475/default.aspx" class="cloud cloud-size-3" title="TV">TV</a>
+	
+		
+	
+		<a href="http://www.zive.sk/notebooky/sc-295/default.aspx" class="cloud cloud-size-2" title="Notebooky">Notebooky</a>
+	
+		
+	
+		<a href="http://www.zive.sk/optika/sc-476/default.aspx" class="cloud cloud-size-4" title="Optika">Optika</a>
+	
+		
+	
+		<a href="http://www.zive.sk/google/sc-310/default.aspx" class="cloud cloud-size-1" title="Google">Google</a>
+	
+		
+	
+		<a href="http://www.zive.sk/ipad/sc-478/default.aspx" class="cloud cloud-size-3" title="iPad">iPad</a>
+	
+		
+	
+		<a href="http://www.zive.sk/facebook/sc-342/default.aspx" class="cloud cloud-size-5" title="Facebook">Facebook</a>
+	
+		
+	
+		<a href="http://www.zive.sk/tipy-a-triky/sc-294/default.aspx" class="cloud cloud-size-1" title="Tipy a triky">Tipy a triky</a>
+	
+		
+	
+		<a href="http://www.zive.sk/vianoce-2012/sc-507/default.aspx" class="cloud cloud-size-3" title="Vianoce 2012">Vianoce 2012</a>
+	
+		
+	
+		<a href="http://www.zive.sk/firefox/sc-286/default.aspx" class="cloud cloud-size-3" title="Firefox">Firefox</a>
+	
+		
+	
+		<a href="http://www.zive.sk/recenzia/sc-292/default.aspx" class="cloud cloud-size-3" title="Recenzie">Recenzie</a>
+	
+		
+	
+		<a href="http://www.zive.sk/internet/sc-287/default.aspx" class="cloud cloud-size-2" title="Internet">Internet</a>
+	
+		
+	
+		<a href="http://www.zive.sk/apple/sc-341/default.aspx" class="cloud cloud-size-1" title="Apple">Apple</a>
+	
+	</div>
+	<div class="box-footer">
+		<a href="http://www.zive.sk/stitky/sc-237/default.aspx?taglist=1">Všetky štítky</a>
+	</div>
+</div>
+
+<div class="box"><div class="box-header"><h3>Živé.sk na Facebooku</h3></div>
+<div><iframe src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/likebox.htm" style="border:none; overflow:hidden; width:298px; height:62px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div>
+</div>
+			
+
+<div id="video-box" class="box">
+	<div class="box-header">
+		<h3><a id="videolink" href="http://www.zive.sk/video/sc-71/default.aspx?vidser=1" title="Video na Živé.sk">Video Živé.sk</a></h3>
+	</div>
+	<div class="box-data">
+		
+			<div class="video-box-panel">
+			        <a title="Test Samsung WB850f: Ultrazoom v znamení Wi-Fi" href="http://www.zive.sk/test-samsung-wb850f-ultrazoom-v-znameni-wi-fi/sc-3-a-309076/default.aspx">
+			            <span><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/556593436.jpg" alt="" height="68"></span>
+				</a>
+				<a title="Test Samsung WB850f: Ultrazoom v znamení Wi-Fi" href="http://www.zive.sk/test-samsung-wb850f-ultrazoom-v-znameni-wi-fi/sc-3-a-309076/default.aspx">
+			            Test Samsung WB850f: Ultrazoom v znamení Wi-Fi
+			        </a>
+				<br class="clear">
+		        </div>
+		
+			
+		
+			<div class="video-box-panel video-box-panel-right">
+			        <a title="Živé IT 11.5.2013: Úspech Windows 8, Orange má novú predplatenku" href="http://www.zive.sk/uspech-windows-8-orange-ma-novu-predplatenku/sc-3-a-309012/default.aspx">
+			            <span><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/319903251.jpg" alt="" height="68"></span>
+				</a>
+				<a title="Živé IT 11.5.2013: Úspech Windows 8, Orange má novú predplatenku" href="http://www.zive.sk/uspech-windows-8-orange-ma-novu-predplatenku/sc-3-a-309012/default.aspx">
+			            Živé IT 11.5.2013: Úspech Windows 8, Orange má novú predplatenku
+			        </a>
+				<br class="clear">
+		        </div>
+		
+			<div class="clear"> </div>
+		
+	</div>
+	<div class="box-footer">
+		Ďalšie videá:  <a href="http://www.zive.sk/video/sc-71/default.aspx?vidser=1" title="Videa redakcie Živé.sk">počítače</a> | <a href="http://www.zive.sk/video/sc-71/default.aspx" title="Videa všetkých redakcií">všetky videá</a>
+	</div>
+</div><div class="box">
+  <div class="box-header">
+    <h3>
+      <a href="http://www.zive.sk/najdi-job-v-it/sc-67/default.aspx" title="Nájdi si prácu v IT">Nájdi si prácu v IT</a>
+    </h3>
+  </div>
+  <div class="box-data">
+    <div class="box-list">
+      <div class="rssitem">
+        <a href="http://www.informatici.sk/zive/show_offer.php?pp_id=444199&amp;type=hot" title="Bratislava, 18.05, R.I.Consultancy Services (Slovakia), s.r.o." target="_blank">Business Development Manager</a>
+      </div>
+      <div class="rssitem">
+        <a href="http://www.informatici.sk/zive/show_offer.php?pp_id=444197&amp;type=hot" title="Slovenská republika, 18.05, AuJob s.r.o." target="_blank">Technical support s nemčinou</a>
+      </div>
+      <div class="rssitem">
+        <a href="http://www.informatici.sk/zive/show_offer.php?pp_id=444194&amp;type=hot" title="Slovenská republika, 18.05, AuJob s.r.o." target="_blank">SW Tester</a>
+      </div>
+      <div class="rssitem">
+        <a href="http://www.informatici.sk/zive/show_offer.php?pp_id=444192&amp;type=hot" title="Slovenská republika, 18.05, AuJob s.r.o." target="_blank">Vývojár webových aplikácií - PHP, HTML, CSS, JS</a>
+      </div>
+      <div class="rssitem rssitem-lastone">
+        <a href="http://www.informatici.sk/zive/show_offer.php?pp_id=444191&amp;type=hot" title="Slovenská republika, 18.05, AuJob s.r.o." target="_blank">Java programátor (android)</a>
+      </div>
+    </div>
+    <div align="center">
+      <a class="infomratikbox" href="http://www.informatici.sk/" title="viacej ponúk Informatici.sk">
+      </a>
+    </div>
+    <div class="clear">
+    </div>
+  </div>
+  <div class="box-footer">
+    <a href="http://www.zive.sk/najdi-job-v-it/sc-67/default.aspx">všetky ponuky</a>
+		&nbsp;|&nbsp;
+		<a href="http://www.informatici.sk/">viac ponúk Informatici.sk</a></div>
+</div>
+
+<div class="box">
+	<div class="box-header">
+		<h3><a href="http://www.zive.sk/tlacove-spravy/sc-5/default.aspx">Tlačové správy</a></h3>
+	</div>
+	<div class="box-data">
+
+<div class="arlist-row">
+	<div class="arlist-data">
+	<a href="http://www.zive.sk/tlacove-spravy/nasadenie-cloudu-neprinasa-podnikom-ocakavanu-efektivitu/sc-5-a-309203/default.aspx" title="tlačová správa">Nasadenie cloudu neprináša podnikom očakávanú efektivitu</a>
+	
+	</div>
+	<div class="clear"></div>
+</div>
+
+	<div class="clear clear-margin"></div>
+
+<div class="arlist-row">
+	<div class="arlist-data">
+	<a href="http://www.zive.sk/tlacove-spravy/rozsireny-balik-aplikacii-oracle-business-intelligence-pomaha-zakaznikom-ziskavat-z-ich-dat-strategicke-informacie/sc-5-a-309202/default.aspx" title="tlačová správa">Rozšírený balík aplikácií Oracle Business Intelligence pomáha zákazníkom získavať z ich dát strategické informácie</a>
+	
+	</div>
+	<div class="clear"></div>
+</div>
+
+	<div class="clear clear-margin"></div>
+
+<div class="arlist-row">
+	<div class="arlist-data">
+	<a href="http://www.zive.sk/tlacove-spravy/dalsi-rada-prestiznich-oceneni-pro-barracuda-networks/sc-5-a-309201/default.aspx" title="tlačová správa">Další řada prestižních ocenění pro Barracuda Networks</a>
+	
+	</div>
+	<div class="clear"></div>
+</div>
+
+	<div class="clear clear-margin"></div>
+
+<div class="arlist-row">
+	<div class="arlist-data">
+	<a href="http://www.zive.sk/tlacove-spravy/slovenska-firma-ziskala-uznavany-sap-certifikat-pre-hosting/sc-5-a-309200/default.aspx" title="tlačová správa">Slovenská firma získala uznávaný SAP certifikát pre hosting</a>
+	
+	</div>
+	<div class="clear"></div>
+</div>
+
+	<div class="clear clear-margin"></div>
+
+<div class="arlist-row">
+	<div class="arlist-data">
+	<a href="http://www.zive.sk/tlacove-spravy/externy-disk-my-passport-ultra-ponuka-jedinencne-mobilne-ulozisko-vratane-ochrany-dat-programom-wd-smartware-pro/sc-5-a-309199/default.aspx" title="tlačová správa">Externý disk My Passport Ultra ponúka jedinenčné mobilné úložisko vrátane ochrany dát programom WD SmartWare Pro</a>
+	
+	</div>
+	<div class="clear"></div>
+</div>
+
+	</div>
+	<div class="box-footer">
+		<a href="http://www.zive.sk/tlacove-spravy/sc-5/default.aspx">Ďalšie tlačové správy</a>
+	</div>
+</div>
+
+
+<div class="clear"></div>
+
+
+
+			<div class="clear advert-label-text"></div>
+			<div id="advert-text" class="box box-no-header">
+				<div class="box-data">
+					<script src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/zive_text.php"></script>
+				</div>
+			</div>
+			<div class="advert-label"></div>
+
+		</div>
+
+		<br class="clear">
+	</div>
+</div>	
+
+<div id="page-promo">
+	<div id="ctl01_cpbookbar"></div>
+</div>	
+
+<div id="page-footer">
+
+<div style="float:right">
+<a href="https://www.facebook.com/zivesk"><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/facebook_small.png"></a>
+<a href="https://plus.google.com/116190427038857195656/posts"><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/google_small.png"></a>
+<a href="https://twitter.com/zivesk"><img src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/twitter_small.png"></a>
+</div>
+		
+	<div id="ctl01_mnmainnavbottom" class="primary">
+		<div class="mnmain">
+
+	
+			<span>
+				
+				<a href="http://www.zive.sk/tiraz-a-redakcia/sc-43/default.aspx" id="ctl01_1889_1051_ctl00_SectionList_ctl00_ref_external" title="Tiráž a redakcia">Tiráž a redakcia</a>
+			</span>
+		
+			<span>|</span>
+		
+			<span>
+				
+				<a href="http://www.zive.sk/autori/sc-44/default.aspx" id="ctl01_1889_1051_ctl00_SectionList_ctl02_ref_external" title="Autori">Autori</a>
+			</span>
+		
+			<span>|</span>
+		
+			<span>
+				
+				<a href="http://www.zive.sk/tiraz-a-redakcia/tiraz-redakcia-a-inzercia/sc-43-sr-1-a-106/default.aspx#inzercia" id="ctl01_1889_1051_ctl00_SectionList_ctl04_ref_external" title="Inzercia">Inzercia</a>
+			</span>
+		
+			<span>|</span>
+		
+			<span>
+				
+				<a href="http://www.zive.sk/pripomienky/sc-45/default.aspx?comments=1" id="ctl01_1889_1051_ctl00_SectionList_ctl06_ref_external" title="Pripomienky">Pripomienky</a>
+			</span>
+		
+			<span>|</span>
+		
+			<span>
+				
+				<a href="http://www.zive.sk/zive-e-mailom/sc-46/default.aspx?mailer=1" id="ctl01_1889_1051_ctl00_SectionList_ctl08_ref_external" title="Živé e-mailom">Živé e-mailom</a>
+			</span>
+		
+			<span>|</span>
+		
+			<span>
+				
+				<a href="http://www.zive.sk/rss/sc-47/default.aspx" id="ctl01_1889_1051_ctl00_SectionList_ctl10_ref_external" title="RSS">RSS</a>
+			</span>
+		
+			<span>|</span>
+		
+			<span>
+				
+				<a href="http://www.zive.sk/text" id="ctl01_1889_1051_ctl00_SectionList_ctl12_ref_external" title="m.zive.sk">Textová verzia</a>
+			</span>
+		
+
+		</div>
+</div>
+
+	ISSN 1335-806X • Vydáva Azet.sk, a. s. •  Inzercia: <a href="http://www.zive.sk/tiraz-a-redakcia/sc-3-a-106/default.aspx">Obchodné oddelenie</a> • <a href="http://www.zive.sk/tiraz-a-redakcia/sc-3-a-106/default.aspx" title="Kontakt na redakciu">Kontakt na redakciu</a>
+	
+	<div class="clear clear-margin"></div>
+
+</div>
+
+</form>
+		<script type="text/javascript">
+		//<![CDATA[
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		//]]>
+		</script><script src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/ga.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		//<![CDATA[
+			try
+			{
+				var pageTracker = _gat._getTracker("UA-6533072-2");
+				pageTracker._trackPageview();
+			}
+			catch(err)
+			{
+			}
+		//]]>
+		</script>
+    <script type="text/javascript">
+    var _sf_async_config={uid:9377,domain:"zive.sk"};
+    (function(){
+      function loadChartbeat() {
+        window._sf_endpt=(new Date()).getTime();
+        var e = document.createElement('script');
+        e.setAttribute('language', 'javascript');
+        e.setAttribute('type', 'text/javascript');
+        e.setAttribute('src',
+           (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
+           "js/chartbeat.js");
+        document.body.appendChild(e);
+      }
+      var oldonload = window.onload;
+      window.onload = (typeof window.onload != 'function') ?
+         loadChartbeat : function() { oldonload(); loadChartbeat(); };
+    })();
+    
+    </script>
+		
+<script src="Programujeme%20v%20Delphi,%2012.%20%C4%8Das%C5%A5%20-%20Z%C3%A1znamy%20-%20%C5%BDiv%C3%A9.sk_files/chartbeat.js" type="text/javascript" language="javascript"></script></body></html>

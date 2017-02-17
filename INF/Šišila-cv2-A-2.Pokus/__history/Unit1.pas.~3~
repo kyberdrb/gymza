@@ -1,0 +1,48 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Spin, ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    Image1: TImage;
+    SpinEdit1: TSpinEdit;
+    Button1: TButton;
+    Label1: TLabel;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+
+//parne
+Image1.Canvas.MoveTo(0, 0);
+Image1.Canvas.LineTo(0, 100);
+
+Image1.Canvas.MoveTo(20, 0);
+Image1.Canvas.LineTo(20, 100);
+
+//neparne
+Image1.Canvas.MoveTo(10, 0);
+Image1.Canvas.LineTo(10, 200);
+
+Image1.Canvas.MoveTo(30, 0);
+Image1.Canvas.LineTo(30, 200);
+
+end;
+
+end.

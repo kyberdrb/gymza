@@ -1,0 +1,79 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Spin;
+
+type
+  TForm2 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Memo1: TMemo;
+    Memo2: TMemo;
+    SpinEdit1: TSpinEdit;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+//Generuj - vygeneruje 5 nahodnych cisel od 1 - 99 do dvoch memo objektov a zapise do suboru cislaA.txt (1. stlpec) a cislaB.txt (2. stlpec)
+//Spocitaj - spocita 1. cislo z 1. suboru a . cislo 2. suboru a zapise do suboru sucet.txt
+procedure TForm2.Button1Click(Sender: TObject);
+var
+  TcislaA, TcislaB, Tsucet: TextFile;
+  nahodne_dvojcislie, nahodne_dvojcislie2: integer;
+  cislo1, cislo2, sucet : integer;
+  i: integer;
+begin
+  Memo1.Lines.Clear;
+  Memo2.Lines.Clear;
+
+  AssignFile(TcislaA, 'cislaA.txt');
+  ReWrite(TcislaA);
+
+  AssignFile(TcislaB, 'cislaB.txt');
+  ReWrite(TcislaB);
+
+  AssignFile(Tsucet, 'sucet.txt');
+  ReWrite(Tsucet);
+
+  for i := 1 to SpinEdit1.Value do
+  begin
+    nahodne_dvojcislie := random(99) +1;
+    Memo1.Lines.Add(IntToStr(nahodne_dvojcislie));
+    WriteLN(TcislaA, nahodne_dvojcislie);
+  end;
+
+  for i := 1 to SpinEdit1.Value do
+  begin
+    nahodne_dvojcislie2 := random(99) +1;
+    Memo2.Lines.Add(IntToStr(nahodne_dvojcislie2));
+    WriteLN(TcislaA, nahodne_dvojcislie2);
+  end;
+
+
+
+  while NOT EOF(TcislaA) do
+  begin
+    ReadLN(TcislaA, cislo1);
+    ReadLN(TcislaB, cislo2);
+  end;
+
+  CloseFile(TcislaA);
+  CloseFile(TcislaB);
+  CloseFile(Tsucet);
+end;
+
+
+end.

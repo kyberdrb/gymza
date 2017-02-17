@@ -1,0 +1,17 @@
+/* --------------------------- GENERAL ---------------------------- */
+
+body {
+	background: #000000;
+}
+
+#page-navigation,
+#navigation-clip,
+#page-footer,
+#page-column-right,
+#user-clip,
+#main-menu,
+#page-promo,
+#advert-sticky
+{
+	display: none!important; 
+}

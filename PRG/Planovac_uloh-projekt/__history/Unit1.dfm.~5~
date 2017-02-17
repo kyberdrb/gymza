@@ -1,0 +1,49 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 474
+  ClientWidth = 782
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PageControl1: TPageControl
+    Left = 0
+    Top = 0
+    Width = 782
+    Height = 474
+    ActivePage = TabSheet3
+    Align = alClient
+    TabOrder = 0
+    object TabSheet2: TTabSheet
+      Caption = #218'lohy'
+      ImageIndex = 1
+      object CheckListBox1: TCheckListBox
+        Left = 104
+        Top = 96
+        Width = 537
+        Height = 321
+        ItemHeight = 13
+        TabOrder = 0
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Pozn'#225'mky'
+      ImageIndex = 2
+      object Edit1: TEdit
+        Left = 168
+        Top = 64
+        Width = 393
+        Height = 313
+        TabOrder = 0
+        Text = 'Edit1'
+      end
+    end
+  end
+end

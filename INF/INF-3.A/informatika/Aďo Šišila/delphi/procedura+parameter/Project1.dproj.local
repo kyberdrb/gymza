@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2011.12.06 14:41:03.666,=\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2011.12.06 15:02:21.511,\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\3.A\Aďo Šišila\delphi\procedura+parameter\Unit1.pas=\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2011.12.06 15:02:21.511,\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\3.A\Aďo Šišila\delphi\procedura+parameter\Unit1.dfm=\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2011.12.06 15:02:22.245,\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\3.A\Aďo Šišila\delphi\procedura+parameter\Project1.dproj=\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

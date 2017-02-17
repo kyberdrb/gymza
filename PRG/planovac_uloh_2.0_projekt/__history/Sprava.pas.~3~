@@ -1,0 +1,24 @@
+unit Sprava;
+
+interface
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Main;
+
+  type
+  TSprava = class (TCustomListBox)
+  private
+    FZadajSpravu: String;
+    FDatum: Integer;
+    FCheckmark: Boolean;
+    SetZadajSpravu: String;
+    SetDatum: String;
+  public
+    property ZadajSpravu: string read FZadajSpravu write SetZadajSpravu;
+    property Datum: string read FDatum write SetDatum;
+    property Checkmark: boolean read FCheckmark write FCheckmark;
+  end;
+
+implementation
+
+end.

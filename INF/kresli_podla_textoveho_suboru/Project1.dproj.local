@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2013/03/25 21:48:08.000.444,=C:\Users\HP\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2013/05/04 12:41:22.000.632,=C:\Users\HP\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2013/05/04 12:42:19.000.710,C:\Users\HP\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\HP\Desktop\kresli_podla_textoveho_suboru\Unit1.pas</Transaction>
+    <Transaction>2013/05/04 12:42:19.000.710,C:\Users\HP\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\HP\Desktop\kresli_podla_textoveho_suboru\Unit1.dfm</Transaction>
+    <Transaction>2013/05/04 12:42:20.000.940,C:\Users\HP\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\HP\Desktop\kresli_podla_textoveho_suboru\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

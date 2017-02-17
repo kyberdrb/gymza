@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899/12/30 00:00:00.000.662,=\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2012/11/23 08:30:45.000.958,=\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2012/11/23 08:31:27.000.350,\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Unit2.pas=\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\CifernySucet.pas</Transaction>
+    <Transaction>2012/11/23 08:31:27.000.350,\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Unit2.dfm=\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\CifernySucet.dfm</Transaction>
+    <Transaction>2012/11/23 09:30:39.000.326,\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\CifernySucet.dfm=E:\INF\CifernySucet\CifernySucet.dfm</Transaction>
+    <Transaction>2012/11/23 09:30:39.000.326,\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\CifernySucet.pas=E:\INF\CifernySucet\CifernySucet.pas</Transaction>
+    <Transaction>2012/11/23 09:30:41.000.202,\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Project1.dproj=E:\INF\CifernySucet\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

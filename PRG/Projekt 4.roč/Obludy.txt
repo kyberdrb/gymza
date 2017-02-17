@@ -1,0 +1,15 @@
+9 10
+2p3dpl3d4pl2h
+20 1
+4d2p3dp2dp2d2l3dp2l2d
+16 4
+3h4ld2l2dl3d3pd2ph2p3h
+2 14
+3dpd3p2hl3h3lhl2h5ph
+4 5
+2ph5p3h9pd3ph4p3dl5d2p
+28 17
+3d4lhl2h2l2hpl2d3lp2dpld4l2hd2lhldldlh2lh2l2h2d3ld2hl2hlphp
+14 14
+2hpd3p4ld2hp
+

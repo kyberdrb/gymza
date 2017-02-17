@@ -1,0 +1,10 @@
+Èo treba medzi nuly vloi, aby bol vısledok pravda?
+Nesmie to by èíslo, iba funkcia!
+0+0+0=3
+Riešenie:
+0+0+0=3
+
+cos0+cos0+cos0=3
+
+
+cos0=1

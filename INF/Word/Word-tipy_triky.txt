@@ -1,0 +1,14 @@
+=Cislovanie od x-tej strany
+
+dat sa na predchadzajucu stranu
+Rozlozenie strany - zlomy - zlom sekcie
+
+pre hlavicku kliknut Prepojit s predchadzajucou
+
+
+=Komprimacia obrazkov (setrenie miesta)
+klik na obrazok 2x
+vlavo hore klik na Komprimovat obrazky
+Klik Clielovy vystup - obrazovka alebo projektor
+
+tuto proceduru opakovat aj pri orezavani obrazkov

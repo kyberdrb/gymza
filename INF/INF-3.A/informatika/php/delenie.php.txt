@@ -1,0 +1,14 @@
+<?
+$a=5
+$b=3
+if ($a<$b)
+{
+echo "a je menšie ako b";
+}
+if ($a=$b)
+{echo "a je rovne b";
+}
+if ($a>$b)
+{echo "a vacsie ako b";
+}
+?>

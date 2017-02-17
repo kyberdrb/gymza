@@ -1,0 +1,68 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Image1: TImage;
+    Memo1: TMemo;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  FKresli: textfile;
+  text: string;
+  PosX, PosY, PismoSize: integer;
+  pismeno: char;
+  pocet_pismen, pocet_medzier, pocet_znakov: integer;
+begin
+  AssignFile(FKresli, 'kresli.txt');
+  Reset(FKresli);
+
+  while NOT EOF(FKresli) do
+  begin
+    ReadLN(FKresli, text);
+    Read(FKresli, PosX, PosY, PismoSize);
+    Image1.Canvas.Font.Size:= PismoSize;
+    Image1.Canvas.TextOut(PosX, PosY, text);
+    ReadLN(FKresli);
+  end;
+
+  Reset(FKresli);
+  pocet_medzier:=0;
+  pocet_znakov:=0;// - pocet_medzier -3;
+  while NOT EOF(FKresli) do
+  begin
+    Read(FKresli, pismeno);
+    inc(pocet_znakov);
+    if pismeno = ' ' then
+    begin
+      inc(pocet_medzier);
+
+    end;
+  end;
+
+  pocet_pismen:=pocet_znakov-pocet_medzier;
+
+  Memo1.Lines.Add('Subor obsahuje ' + IntToStr(pocet_znakov) + ' znakov, ' + IntToStr(pocet_pismen) + ' pismen a ' + IntToStr(pocet_medzier) + ' medzier');
+
+end;
+
+end.

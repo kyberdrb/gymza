@@ -1,0 +1,26 @@
+a {color: #000066}
+a:visited {color: #0033CC}
+a:hover {color: red}
+body, td, p, div, dt, dd, input, select, textarea {font-family: Arial, Helvetica, sans-serif; font-size: 13px}
+body {margin-top: 7px; margin-left: 6px; margin-right: 0px}
+.n {font-family: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px}
+.k {margin-top: 4px; margin-bottom: 6px}
+.star_red {color: red; font-weight: bold; font-family: serif}
+.star_blue {color: blue; font-weight: bold; font-family: serif}
+.hr3 {width: 577px; height: 1px; background-color: gray}
+.black, .black a, .black a:visited {color: black}
+.black a:hover {color: red}
+.menusec {background-color: #AD5700; color: white; padding: 3px; padding-left: 6px}
+.menubody {padding: 5px; background-color: #FFFCF7; border: 1px solid #996600}
+.menuline {padding-bottom: 3px}
+img.butn {background: transparent}
+a.butn {background: #ffffff}
+a.butn:hover {background: Orange}
+img.butnoff {background: silver}
+a.butnok {background: #fffacd}
+a.butnok:hover {background: Orange}
+.head1 {background-color: Gold}
+.small {FONT-SIZE: 11px}
+.ad {FONT-SIZE: 12px}
+ul {margin-bottom: 3px; margin-top: 0px; margin-left: 20px; margin-right: 0px; list-style:square}
+.ods {margin-left: 33px; margin-bottom: 12px}

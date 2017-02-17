@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2013/03/08 08:57:39.000.032,=C:\Users\HP\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2013/03/08 08:58:56.000.668,I:\INF\citanie_zapis_textoveho_suboru\Unit1.pas=C:\Users\HP\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2013/03/08 08:58:56.000.668,I:\INF\citanie_zapis_textoveho_suboru\Unit1.dfm=C:\Users\HP\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2013/03/08 08:58:59.000.780,I:\INF\citanie_zapis_textoveho_suboru\Project1.dproj=C:\Users\HP\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

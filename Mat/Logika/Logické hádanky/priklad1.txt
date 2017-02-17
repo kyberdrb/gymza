@@ -1,0 +1,16 @@
+Flaša so štuplom stojí 1,10 Sk. Štupe¾ je o 1 Sk lacnejší.
+Ko¾ko stojí štupe¾ a ko¾ko f¾aša?
+
+Riešenie:
+Štupe¾ stojí 0,05sk. F¾aša stojí 1,05sk.
+
+
+x+x-1=1,1
+2x-1=1,1      /+1
+2x=2,1        //2
+x=1,05
+
+
+
+
+1,1-1,05=0,05

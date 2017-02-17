@@ -1,0 +1,65 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 598
+  ClientWidth = 965
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesigned
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 368
+    Top = 194
+    Width = 26
+    Height = 13
+    Caption = 'Slovo'
+  end
+  object Label2: TLabel
+    Left = 331
+    Top = 233
+    Width = 63
+    Height = 13
+    Caption = 'Index Riadku'
+  end
+  object Memo1: TMemo
+    Left = 72
+    Top = 184
+    Width = 233
+    Height = 185
+    ScrollBars = ssBoth
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 592
+    Top = 182
+    Width = 75
+    Height = 25
+    Caption = 'Pridaj'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object SpinEdit1: TSpinEdit
+    Left = 416
+    Top = 224
+    Width = 121
+    Height = 22
+    MaxValue = 0
+    MinValue = 0
+    TabOrder = 2
+    Value = 0
+  end
+  object Edit1: TEdit
+    Left = 416
+    Top = 184
+    Width = 121
+    Height = 21
+    TabOrder = 3
+  end
+end

@@ -1,0 +1,103 @@
+unit Aplikacia;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.CheckLst, Vcl.ComCtrls,
+  Vcl.ExtCtrls, Vcl.Grids, Vcl.Samples.Calendar;
+
+type
+  TForm1 = class(TForm)
+    PageControl1: TPageControl;
+    TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
+    CheckListBox1: TCheckListBox;
+    Edit2: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    RichEdit1: TRichEdit;
+    Button3: TButton;
+    Button4: TButton;
+    TabSheet1: TTabSheet;
+    OpenDialog1: TOpenDialog;
+    SaveDialog1: TSaveDialog;
+    Label1: TLabel;
+    RadioGroup1: TRadioGroup;
+    Calendar1: TCalendar;
+    ComboBox1: TComboBox;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure CheckListBox1DrawItem(Control: TWinControl; Index: Integer;
+      Rect: TRect; State: TOwnerDrawState);
+    procedure Button4Click(Sender: TObject);
+    procedure CheckListBox1ClickCheck(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  CheckListBox1.Items.Add(Edit2.Text);
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  CheckListBox1.DeleteSelected;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  OpenDialog1.Execute();
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+  SaveDialog1.Execute();
+end;
+
+procedure TForm1.CheckListBox1ClickCheck(Sender: TObject);
+//vid http://www.tek-tips.com/viewthread.cfm?qid=19476 pre zdrojovy kod
+var
+  rect: TRect;
+begin
+  with CheckListBox1 do
+  begin
+    rect:=ItemRect(ItemIndex);
+    rect.Left:=15;
+    CheckListBox1DrawItem(CheckListBox1,ItemIndex,rect,[]);
+  end;
+
+end;
+
+procedure TForm1.CheckListBox1DrawItem(Control: TWinControl; Index: Integer;
+  Rect: TRect; State: TOwnerDrawState);
+//vid http://www.tek-tips.com/viewthread.cfm?qid=19476 pre zdrojovy kod
+begin
+//ak je v checklistboxe zaskrtnute policko, zmen typ pisma na preciarknute cez canvas
+  if CheckListBox1.Checked[Index] then
+  begin
+    CheckListBox1.Canvas.Font.Style:=[fsStrikeOut];
+    CheckListBox1.Canvas.TextRect(Rect,Rect.left,Rect.top,CheckListBox1.Items[Index])
+  end
+
+  else
+
+  begin
+    CheckListBox1.Canvas.Font.Style:=[];
+    CheckListBox1.Canvas.TextRect(Rect,Rect.left,Rect.top,CheckListBox1.Items[Index]);
+  end;
+
+  end;
+
+end.

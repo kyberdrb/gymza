@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="sk"><head>
+<title>MS 2013 - Aktuálne.sk</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Description" content="">
+<meta name="keywords" content="">
+<script type="text/javascript" src="index_data/jQuery.js"></script>
+<meta name="robots" content="noindex, nofollow">
+<style media="all" type="text/css">
+body{margin: 0px; padding: 0px; border: 0px; width: 100%; height: 100%;background:transparent;}
+.mskicker { padding: 0px; width: 200px; height: 113px; float: left; background: transparent url(http://static.mediacentrum.sk/aktualne2011/images/mshockey/mskickerBgr.png) no-repeat -5px -5px; font-family: Arial, Helvetica, sans-serif; }
+.mskicker *{text-decoration: none;}
+.mskicker div{float: left;}
+.mskicker .line { padding: 4px 0px 0px 0px; width: 200px; height: auto; }
+.mskicker .line .center { padding: 0px 0px 0px 0px; width: 20px; height: auto; text-align: center; }
+.mskicker .line .center span { display: block; font-size: 18px; height: 25px; color: #fff; margin-top: 6px; }
+.mskicker .line .center b { display: block; font-size: 41px; color: #fff; }
+.mskicker .line .left { padding: 0px 0px 0px 0px; width: 90px; height: auto; text-align: center; }
+.mskicker .line .left a { display: block; float: left; padding: 0px 0px 0px 5px; width: 85px; text-align: center; }
+.mskicker .line .left a img { display: block; border: 0px solid transparent; float: left; padding: 4px 4px 4px 4px; margin: 2px 0px 0px 0px; width: 34px; height: 23px; background: transparent url(http://static.mediacentrum.sk/aktualne2011/images/mshockey/promoFlag.png) no-repeat 0px 0px; }
+.mskicker .line .left span { display: block; float: right; font-size: 18px; color: #fff; margin-top: 6px; }
+.mskicker .line .left b { display: block; float: right; font-size: 41px; color: #fff; }
+.mskicker .line .right { padding: 0px 0px 0px 0px; width: 90px; height: auto; text-align: left; }
+.mskicker .line .right a { display: block; float: left; padding: 0px 5px 0px 0px; width: 85px; }
+.mskicker .line .right a img { display: block; border: 0px solid transparent; float: right; padding: 4px 4px 4px 4px; margin: 2px 0px 0px 0px; width: 34px; height: 23px; background: transparent url(http://static.mediacentrum.sk/aktualne2011/images/mshockey/promoFlag.png) no-repeat 0px 0px; }
+.mskicker .line .right span { display: block; float: left; font-size: 18px; color: #fff; margin-top: 6px; }
+.mskicker .line .right b { display: block; float: left; font-size: 41px; color: #fff; }
+.mskicker .relative { position: relative; display: block; width: 1px; height: 1px; font-size: 0px; line-height: 0px; }
+.mskicker .relative a { position: absolute; display: block; top: 83px; left: 136px; width: 60px; height: 26px; font-size: 0px; line-height: 0px; background: transparent url(http://static.mediacentrum.sk/aktualne2011/images/mshockey/promoMore.png) no-repeat 0px 0px; }
+</style>
+</head>
+<body>
+<script type="text/javascript">
+var stickerZapas = function() {
+    this.cfg = {
+        refreshTime: 15*1000, // x seconds * 1000
+        secondaryUrl: 'kicker.html', // nahradna linka, ak zapas prave nie je aktivny
+        dataLink: 'data.js', // file json path with data
+        flagImgPath: 'http://static.mediacentrum.sk/aktualne2011/images/mshockey/34x23/', // path for national flags
+        linkBaseTeam: 'http://aktualne.atlas.sk/mshokej2013/reprezentacie/', // team base path
+        linkBaseGame: 'http://aktualne.atlas.sk/redirect?article=', // match base path
+        linkDefaultGame: 'http://aktualne.atlas.sk/mshokej2013/', // match base path
+        bannerid: 21745
+    }
+    this.getData();
+}
+stickerZapas.prototype.getData = function() {
+    var self = this;
+    $.ajax({
+        url: self.cfg.dataLink,
+        dataType: 'json',
+        cache: false,
+        success: function(data, textStatus, jqXHR) {
+            if (data==null) {
+                location.href = self.cfg.secondaryUrl;
+                return;
+            }
+            if (data.isOnline==false) {
+                location.href = self.cfg.secondaryUrl;
+                return;
+            }
+            self.draw(data);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            location.href = self.cfg.secondaryUrl;
+            return;
+        }
+    })
+}
+stickerZapas.prototype.draw = function(data) {
+    var self = this;
+    var linkBaseTeam = self.cfg.linkBaseTeam;
+    var linkBaseGame = self.cfg.linkBaseGame;
+    if ($('#mskicker').length==0) {
+        var html = '', D = '';
+        if (typeof data.link!='string' || data.link=='') {
+            linkBaseGame = self.cfg.linkDefaultGame;
+            data.link = '';
+        } else {
+            data.link += '&bannerid='+self.cfg.bannerid;
+        }
+        html += '<div class="mskicker" id="mskicker">';
+            html += '<span class="relative"><a class="more" href="'+linkBaseGame+data.link+'" target="_blank" title="Viac">Viac</a></span>';
+            html += '<div class="line">';
+                D = data.left;
+                html += '<div class="left">';
+                    html += '<a href="'+linkBaseTeam+D.link+'/" title="'+D.title+'" target="_blank"><img src="'+self.cfg.flagImgPath+D.flag+'" alt="'+D.title+'" /><span>'+D.title+'</span></a>';
+                    html += '<b id="goal-A">'+D.goal+'</b>';
+                html += '</div>';
+                html += '<div class="center">';
+                    html += '<span>:</span>';
+                    html += '<b>:</b>';
+                html += '</div>';
+                D = data.right;
+                html += '<div class="right">';
+                    html += '<a href="'+linkBaseTeam+D.link+'/" title="'+D.title+'" target="_blank"><img src="'+self.cfg.flagImgPath+D.flag+'" alt="'+D.title+'" /><span>'+D.title+'</span></a>';
+                    html += '<b id="goal-B">'+D.goal+'</b>';
+                html += '</div>';
+            html += '</div>';
+
+        html += '</div>';
+        $(document.body).append(html);
+    } else {
+        $('#goal-A').html(data.left.goal);
+        $('#goal-B').html(data.right.goal);
+    }
+    setTimeout(function(){self.getData();}, self.cfg.refreshTime);
+}
+var zapas = new stickerZapas();
+</script>
+
+
+<div class="mskicker" id="mskicker"><span class="relative"><a class="more" href="http://aktualne.atlas.sk/redirect?article=online-postupia-svajciari-po-patnastich-rokoch-opat-do-boja-o-medaily&amp;bannerid=21745" target="_blank" title="Viac">Viac</a></span><div class="line"><div class="left"><a href="http://aktualne.atlas.sk/mshokej2013/reprezentacie/svajciarsko/" title="SUI" target="_blank"><img src="index_data/SUI.png" alt="SUI"><span>SUI</span></a><b id="goal-A">1</b></div><div class="center"><span>:</span><b>:</b></div><div class="right"><a href="http://aktualne.atlas.sk/mshokej2013/reprezentacie/usa/" title="USA" target="_blank"><img src="index_data/USA.png" alt="USA"><span>USA</span></a><b id="goal-B">0</b></div></div></div></body></html>

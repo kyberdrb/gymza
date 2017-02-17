@@ -1,0 +1,36 @@
+unit Upravit_Dialog;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, Spin;
+
+type
+  TEdit = class(TForm)
+    SpinEdit1: TSpinEdit;
+    SpinEdit2: TSpinEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    ColorBox1: TColorBox;
+    Button1: TButton;
+    Button2: TButton;
+    Label4: TLabel;
+    ColorBox2: TColorBox;
+    Label5: TLabel;
+    SpinEdit3: TSpinEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Edit: TEdit;
+
+implementation
+
+{$R *.dfm}
+
+end.

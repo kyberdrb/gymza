@@ -1,0 +1,53 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Image1: TImage;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+var
+  slovo : String;
+  I, x, y : Integer;
+begin
+  slovo := 'AHOJ';
+  x := length(slovo) mod 2;
+  y := 10;
+  Image1.Canvas.Font.Height := 15;
+  Image1.Canvas.Font.Color := clBlack;
+  for I := 1 to length(slovo) do
+  begin
+    if x=1 then
+    begin
+
+      Image1.Canvas.Font.Height := 30;
+      Image1.Canvas.Font.Color := clRed;
+      x := x+2;
+    end;
+
+  end;
+
+  Image1.Canvas.TextOut(y+10, 10, slovo);
+end;
+
+end.

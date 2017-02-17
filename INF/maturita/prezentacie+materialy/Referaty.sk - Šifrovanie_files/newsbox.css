@@ -1,0 +1,86 @@
+#NewsBox {
+	border: solid 1px #8EA9C4;
+	border-top: none;
+	background-image: url(../images/blue_bg.gif);
+	background-repeat: repeat-x;
+}
+#NewsBox .innNews {
+ 	padding: 5px;
+}
+
+.topBoxNewsa {
+	margin-top: 10px;
+}
+
+.rightBoxNewsa {
+	width: 220px;
+	float: right;
+}
+
+.leftBoxNewsa {
+	width: 220px;
+	float: left;
+}
+#NewsBox .SplitLine {
+	background-image: url(../images/vline.gif);
+	background-repeat: repeat-y;
+	background-position: 50% 0%;
+	background-color: none;
+	width: 100%;
+	clear:both;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	
+}
+.NewsaInn {
+	padding: 5px;
+	clear: both;
+}
+.NewsaTitle {
+	font-size: 12px;
+	line-height: 16px;
+	margin-bottom: 7px;
+}
+.NewsaTitle a {
+	color: #003366;
+}
+.innNews
+{
+	background-image: url(../images/blue_sel.gif);
+	background-repeat: no-repeat;	
+	padding: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	position: relative;
+	background-position: 28px 0px;	
+}
+
+#NewsTabs
+{
+	margin-top: 10px;
+	line-height: 20px;
+}
+#NewsTabs h2, #NewsTabs h3
+{
+		font-size: 12px;
+}
+#NewsTabs h3
+{
+	float: left;
+	border: 1px solid #8EA9C4;
+	border-bottom: none;
+	width: 75px;
+	display: block;
+	text-align: center;
+	line-height: 20px;
+	margin-right: 5px;
+}
+#NewsTabs h3 a {
+	color: #003366;
+}
+.SelectedTab {
+	font-weight: bold;
+}
+.SelectedTab a {
+	color: #003366;
+}

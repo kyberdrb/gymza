@@ -1,0 +1,62 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Button1: TButton;
+    Memo1: TMemo;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+var
+  FZnamky: TextFile;
+  znamky: string;
+  cislo: integer;
+  sucet: integer;
+  pocet: integer;
+  priemer: real;
+begin
+  AssignFile(FZnamky, 'znamky.txt');
+  Reset(FZnamky);
+  Memo1.Lines.Clear;
+
+  Reset(FZnamky);
+  while Not EOF(FZnamky) do
+  begin
+    ReadLN(FZnamky, znamky);
+    Memo1.Lines.Add(znamky);
+    sucet:=0;
+    cislo:=0;
+    pocet:=0;
+    while NOT EOLN(FZnamky) do
+    begin
+      Read(FZnamky, cislo);
+      sucet:= sucet + cislo;
+      inc(pocet);
+    end;
+    priemer:= sucet/pocet;
+    Memo1.Lines.Add(FloatToStr(priemer));
+    readln(FZnamky);
+  end;
+CloseFile(FZnamky);
+end;
+
+
+end.

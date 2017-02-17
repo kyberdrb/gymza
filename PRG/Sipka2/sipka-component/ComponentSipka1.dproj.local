@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2013/03/25 21:29:44.000.925,=rtl.dcp</Transaction>
+    <Transaction>2013/03/25 21:29:58.000.546,=J:\Dokumenty\Skola\PRG\Sipka2\UnitSipka.pas</Transaction>
+    <Transaction>2013/03/25 21:30:41.000.121,=vcl.dcp</Transaction>
+    <Transaction>2013/03/25 21:31:34.000.718,C:\Users\HP\Documents\RAD Studio\Projects\Sipka1.dproj=C:\Users\HP\Documents\RAD Studio\Projects\Package1.dproj</Transaction>
+    <Transaction>2013/03/25 21:31:44.000.073,C:\Users\HP\Documents\RAD Studio\Projects\ComponentSipka1.dproj=C:\Users\HP\Documents\RAD Studio\Projects\Sipka1.dproj</Transaction>
+    <Transaction>2013/03/25 21:31:59.000.556,J:\Dokumenty\Skola\PRG\Sipka2\sipka-component\ComponentSipka1.dproj=C:\Users\HP\Documents\RAD Studio\Projects\ComponentSipka1.dproj</Transaction>
+    <Transaction>2013/03/25 21:46:06.000.207,=J:\Dokumenty\Skola\PRG\Sipka2\sipka-component\sipka_icon.bmp</Transaction>
+  </Transactions>
+</BorlandProject>

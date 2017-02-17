@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.306,=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.823,=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.060,=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.093,=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2013.01.10 07:37:32.490,=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2013.01.10 08:00:19.004,\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\PointInTvar\Unit1.dfm=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2013.01.10 08:00:19.004,\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\PointInTvar\Unit1.pas=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2013.01.10 08:00:19.629,\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\PointInTvar\Project1.dproj=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

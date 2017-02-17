@@ -1,0 +1,9 @@
+Napíš pä pätiek tak, aby bol vısledok 5000.
+Môeš umocòova.
+Riešenie:
+
+5.(5+5) na druhú.(5+5)=5000
+5.5 na druhú +2.5.5+5 na druhú.(5+5)=5000
+5.(25+50+25).10=5000
+5.100.10=5000
+5000=5000

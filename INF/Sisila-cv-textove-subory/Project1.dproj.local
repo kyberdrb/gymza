@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899/12/30 00:00:00.000.662,=\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2013/04/12 08:08:30.000.802,=\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2013/04/12 08:09:22.000.175,\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Unit2.dfm=\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\4.A\Aďo Šišila\SEI\Pisomka\textove_subory\Unit2.dfm</Transaction>
+    <Transaction>2013/04/12 08:09:22.000.175,\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Unit2.pas=\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\4.A\Aďo Šišila\SEI\Pisomka\textove_subory\Unit2.pas</Transaction>
+    <Transaction>2013/04/12 08:09:24.000.264,\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Project1.dproj=\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\4.A\Aďo Šišila\SEI\Pisomka\textove_subory\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

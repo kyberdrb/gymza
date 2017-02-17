@@ -1,0 +1,58 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Spin, ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    Image1: TImage;
+    SpinEdit1: TSpinEdit;
+    Button1: TButton;
+    Label1: TLabel;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+//rozostupy 20, dlzka neparnej ciary 200, dlzka parnej ciary 100
+var
+  x,yp, yn,rozostup : Integer;
+begin
+  yp := 100;
+  yn := 200;
+  x := 0;
+  rozostup := 20;
+
+  //parne
+  if SpinEdit1.Value mod 2 = 0 then
+  begin
+
+    Image1.Canvas.MoveTo(x, 0);
+    Image1.Canvas.LineTo(x+rozostup, 100);
+
+  end
+  else
+  //neparne
+  begin
+
+    Image1.Canvas.MoveTo(x+10, 0);
+    Image1.Canvas.LineTo(x+10+rozostup, 200);
+
+  end;
+
+end;
+
+end.

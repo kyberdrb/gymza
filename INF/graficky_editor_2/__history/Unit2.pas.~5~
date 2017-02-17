@@ -1,0 +1,85 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, Spin;
+
+type
+  TForm2 = class(TForm)
+    Image1: TImage;
+    ColorBox1: TColorBox;
+    Label1: TLabel;
+    SpinEdit1: TSpinEdit;
+    Button1: TButton;
+    ColorDialog1: TColorDialog;
+    ComboBox1: TComboBox;
+    procedure Image1MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure Image1MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure Button1Click(Sender: TObject);
+    procedure ColorBox1Change(Sender: TObject);
+    procedure Image1MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+  xx, yy: Integer;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+  //spust colordialog
+  ColorDialog1.Execute();
+  //farba obrysu sa preberie s colordialogu
+  Image1.Canvas.Pen.Color:=ColorDialog1.Color;
+end;
+
+procedure TForm2.ColorBox1Change(Sender: TObject);
+begin
+  //pri zmene farby v colorboxe, nastav tuto farbu
+  Image1.Canvas.Pen.Color:= ColorBox1.Selected;
+end;
+
+procedure TForm2.Image1MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+  if Shift=[ssLeft] then
+    begin
+      Image1.Canvas.MoveTo(x, y);
+      //Image1.Canvas.Rectangle(xx, yy, x, y); PROBLEM
+      Image1.Canvas.Pen.Width:= SpinEdit1.Value;
+    end;
+  if Shift=[ssRight] then
+    begin
+      Image1.Canvas.Pen.Color:= clWhite;
+     Image1.Canvas.Rectangle(0, 0, Image1.Width, Image1.Height);
+    end;
+end;
+
+procedure TForm2.Image1MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+  if (Shift=[ssLeft]) AND (ComboBox1.ItemIndex=0) then Image1.Canvas.LineTo(x, y);
+  //if (Shift=[ssLeft]) AND (ComboBox1.ItemIndex=1) then Canvas.Rectangle(xx,yy, x, y); PROBLEM
+end;
+
+procedure TForm2.Image1MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+  //if ComboBox1.ItemIndex=1 then Canvas.Rectangle(xx,yy, x, y); PROBLEM
+  xx:= x;
+  yy:= y;
+end;
+
+end.

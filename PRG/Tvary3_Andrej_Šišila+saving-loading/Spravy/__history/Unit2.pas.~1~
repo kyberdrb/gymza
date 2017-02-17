@@ -1,0 +1,10 @@
+unit Unit2;
+
+interface
+
+resourcestring
+   SMsgDlgYes = '&Ano';
+
+implementation
+
+end.

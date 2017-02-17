@@ -1,0 +1,11 @@
+Máš 2 nádoby. 1. 3litrovú 2. 5litrovú. Prelievaním urob tak, aby ti
+pri prelievaní zostali presne 4litre.
+Môeš poui len vodovod na dolievanie vody!
+Riešenie:
+1.Najprv naplníš 3l nádobu.
+1.Vleješ ju do 5l nádoby.
+3.Naplníš si 3l nádobu 2-krát.
+4.Vleješ do 5l vedierka z 3l nádoby 2l. Zostane 1l v 3l nádobe.
+5.5l nádobu vyleješ a vleješ do nej zvyšnı 1l z 3l nádoby.
+6.Znova naplníš 3l nádobu do plna a vleješ do 5l nádoby a dostaneš 4l
+

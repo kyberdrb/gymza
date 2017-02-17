@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899/12/30 00:00:00.000.360,=\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.662,=\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.532,D:\Dokumenty\Skola\PRG\planovac_uloh_2.0_projekt\Sprava.dfm=D:\Dokumenty\Skola\PRG\planovac_uloh_2.0_projekt\Main.dfm</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.355,D:\Dokumenty\Skola\PRG\planovac_uloh_2.0_projekt\Unit2.dfm=D:\Dokumenty\Skola\PRG\planovac_uloh_2.0_projekt\Sprava.dfm</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.158,\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Unit2.pas=D:\Dokumenty\Skola\PRG\planovac_uloh_2.0_projekt\Unit2.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.292,=\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.546,D:\Dokumenty\Skola\PRG\planovac_uloh_2.0_projekt\Unit1.pas=D:\Dokumenty\Skola\PRG\planovac_uloh_2.0_projekt\Sprava.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.632,=D:\Dokumenty\Skola\PRG\planovac_uloh_2.0_projekt\Unit1.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.158,\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Unit2.dfm=D:\Dokumenty\Skola\PRG\planovac_uloh_2.0_projekt\Unit2.dfm</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.532,D:\Dokumenty\Skola\PRG\planovac_uloh_2.0_projekt\Sprava.pas=D:\Dokumenty\Skola\PRG\planovac_uloh_2.0_projekt\Main.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.355,D:\Dokumenty\Skola\PRG\planovac_uloh_2.0_projekt\Unit2.pas=D:\Dokumenty\Skola\PRG\planovac_uloh_2.0_projekt\Sprava.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.525,\\Gymzaserver2\Data_studenti$\2009\A\sisilaa\My Documents\RAD Studio\Projects\Project1.dproj=D:\Dokumenty\Skola\PRG\planovac_uloh_2.0_projekt\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

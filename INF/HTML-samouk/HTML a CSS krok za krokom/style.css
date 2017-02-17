@@ -1,0 +1,46 @@
+hr 
+{color: green; background-color: green; height: 3px; clear: left}
+ul
+{list-style-type: square; font-weight: normal}
+ul ul
+{list-style-type: disc; font-style: italic}
+ul ul ul
+{list-style-type: circle}
+a:link
+{color: black}
+a:visited
+{color: magenta}
+a:hover
+{color: lime}
+a:active
+{color: red}
+p, li
+{font-family: "Verdana", "Arial", "Helvetica", sans-serif; font-size: 13px}
+.autorske_prava
+{font-family: "Times New Roman", "Times", serif; color:white; background-color: black}
+ol
+{list-style-type: decimal; font-weight: bold}
+.firma
+{font-style: italic; font-weight: bold; color: orange}
+h1, h2, p
+{word-spacing: 0.5px; letter-spacing: 0.5px}
+p
+{padding-left: 20px; text-indent: 20px; text-align: justify; line-height: 150%}
+.prva
+{text-indent: 0px}
+h1, h2, li
+{text-align: left}
+li
+{line-height: 125%}
+img
+{float: left}
+table
+{border-style: outset; border-color: gray; border-width: 2px}
+td
+{border: solid; border-color: gray; border-width: 1px}
+#hornynav
+{float: left; width: 150px; padding-top: 15px}
+#hlavny
+{width: 400px; position: left: 150px; absolute; top: 260px}
+#prava
+{position: absolute; left: 580px; top: 160px}

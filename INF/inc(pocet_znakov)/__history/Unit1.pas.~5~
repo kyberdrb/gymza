@@ -1,0 +1,66 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Memo1: TMemo;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  FSubor: TextFile;
+  text: string;
+  pismeno: char;
+  pismena, znaky, medzery: integer;
+begin
+  AssignFile(FSubor, 'text.txt');
+  Reset(FSubor);
+
+  while NOT EOF(FSubor) do
+  begin
+    ReadLN(FSubor, text);
+    Memo1.Lines.Add(text);
+  end;
+
+  Reset(FSubor);
+  medzery
+  pismena:=0;
+  znaky:=0;
+  while NOT EOF(FSubor) do
+  begin
+    Read(FSubor, pismeno);
+    inc(znaky);
+    if pismeno = ' ' then
+    begin
+      inc(medzery);
+    end
+
+    else
+    begin
+      inc(pismena);
+    end;
+  end;
+
+  Memo1.Lines.Add('');
+  Memo1.Lines.Add('Pocet vsetkych znakov suboru je ' + IntToStr(znaky) + ' pismen je ' + IntToStr(pismena) + ' a medzier ' + IntToStr(medzery));
+end;
+
+end.

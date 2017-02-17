@@ -1,0 +1,57 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Memo1: TMemo;
+    Button1: TButton;
+    Memo2: TMemo;
+    Label1: TLabel;
+    Label2: TLabel;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  FZoznam: TextFile;
+  FZoznamPriezviska: TextFile;
+  meno: String;
+  meno2: String;
+begin
+  AssignFile(FZoznam, 'zoznam.txt');  //priradenie premennej k suboru
+  Reset(FZoznam); //citaj premennu fzoznam
+  AssignFile(FZoznamPriezviska, 'zoznam_priezviska.txt');
+  Reset(FZoznamPriezviska);
+
+  while NOT EOF(FZoznam) do  //pokial NIE JE funkcia EOF pravdiva
+  begin
+    ReadLN(FZoznam, meno);   //citaj jeden riadok z premennej meno
+    Memo1.Lines.Add(meno);   //pridaj riadok do Mema
+  end;
+
+  while NOT EOF(FZoznamPriezviska) do  //pokial NIE JE funkcia EOF pravdiva
+  begin
+    ReadLN(FZoznamPriezviska, meno2);   //citaj jeden riadok z premennej meno
+    Memo2.Lines.Add(meno2);   //pridaj riadok do Mema
+  end;
+
+  CloseFile(FZoznam);  //uzavriet subor a ulozit zmeny
+end;
+
+end.

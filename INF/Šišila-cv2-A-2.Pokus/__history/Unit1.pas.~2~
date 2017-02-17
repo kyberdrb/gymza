@@ -1,0 +1,44 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Spin, ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    Image1: TImage;
+    SpinEdit1: TSpinEdit;
+    Button1: TButton;
+    Label1: TLabel;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+I: Integer;
+z: Integer;
+begin
+z := 0;
+  for I := 0 to SpinEdit1.Value do
+    begin
+      z := z+10;
+      Image1.Canvas.MoveTo(10+z, 10);
+      Image1.Canvas.LineTo(10+z, 100);
+    end;
+
+end;
+
+end.

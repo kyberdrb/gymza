@@ -1,0 +1,66 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Memo1: TMemo;
+    Button1: TButton;
+    OpenDialog1: TOpenDialog;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  FSubor: TextFile;
+  znak: char;
+  text: string;
+  vsetkyznaky, vsetkymedzery, vsetkypismena: integer;
+  subor: string; //uplna ceesta suboru aj s jeho nazvom
+begin
+  subor:=OpenDialog1.FileName;
+  AssignFile(FSubor, subor);
+  Reset(FSubor);
+  Memo1.Lines.Clear;
+  vsetkyznaky:=0;
+  vsetkymedzery:=0;
+  vsetkypismena:=0;
+  while NOT EOF(FSubor) do
+  begin
+    ReadLN(FSubor, text);
+    Memo1.Lines.Add(text);
+  end;
+
+  Reset(FSubor);
+  while NOT EOF(FSubor) do
+  begin
+    Read(FSubor, znak);
+    inc(vsetkyznaky);
+    if znak = ' ' then inc(vsetkymedzery) else inc(vsetkypismena);
+  end;
+  Memo1.Lines.Add(IntToStr(vsetkyznaky) + ' znakov, ' + IntToStr(vsetkypismena) + ' pismen, ' + IntToStr(vsetkymedzery) + ' medzier.');
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  OpenDialog1.Execute();
+end;
+
+end.

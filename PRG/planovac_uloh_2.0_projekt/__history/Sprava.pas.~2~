@@ -1,0 +1,21 @@
+unit Sprava;
+
+interface
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Main;
+
+  type
+  TSprava = class (TCustomListBox)
+
+  private
+    SetZadajSpravu: String;
+    FZadajSpravu: String;
+
+  public
+    property ZadajSpravu: string read FZadajSpravu write SetZadajSpravu;
+  end;
+
+implementation
+
+end.

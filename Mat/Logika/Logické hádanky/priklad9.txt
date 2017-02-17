@@ -1,0 +1,3 @@
+Napíš osem osmièiek tak, aby bol výsledok 1000.
+Riešenie:
+888+88+8+8+8=1000

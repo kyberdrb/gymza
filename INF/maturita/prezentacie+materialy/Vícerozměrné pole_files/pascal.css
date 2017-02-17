@@ -1,0 +1,120 @@
+/**
+ * CSS styl pro web TurboPascal
+ * 
+ * @author Josef Rybicka, josef.rybicka@gmail.com  
+ * @version 1.0, 3.10.2010
+ */   
+
+/**
+ * Zakladni formatovani stranky 
+ */
+* {
+  margin: 0; padding: 0; border: 0;
+} 
+body {
+     text-align: center; background: url('bg.gif'); font-family: "Trebuchet MS", "verdana", serif;
+}
+
+#main {
+  width: 800px; margin: 0 auto; text-align: left; background: url('left-bg.png') top left repeat-y; 
+}
+#hlavicka {
+  width: 100%; height: 85px; background: url('header-bg.png') top left repeat-x;
+}
+#vpravo {
+  width: 600px; float: right; padding: 0; background: #fff;
+}
+#vlevo {
+  width: 200px; float: left; padding: 0; font-size: 0.9em;
+}
+#vlevo ul {
+  list-style-type: square; padding: 0 0 0 12px; margin: 5px 16px; color: gray;
+}
+#vlevo ul li {
+	margin: 7px 0;
+}
+#vlevo h3 {
+  color: maroon; font-variant: small-caps; letter-spacing: 1px; font-weight: normal; padding: 0 15px 0 15px; margin: 12px 0;
+}
+#paticka {
+  clear: both; width: 800px; font-size: 0.9em; background: url('bottom-bg.png') repeat-x; height: 50px;
+}
+#paticka p {
+  margin: 15px 15px;
+}
+blockquote {
+  margin: 20px 20px 10px 40px; border: 5px solid #dbe1f9; padding: 10px; font-style: italic; font-family: "Times New Roman"; font-size: 1.3em; background: url('quote.png') top right no-repeat #f9f9fd; color: #3a4575;
+}
+blockquote span {
+    display: block; text-align: right; font-style: normal; text-transform: uppercase; font-family: "Arial"; font-size: 60%; letter-spacing: 1px;
+}
+  h2#logo {
+	    margin:0; padding:0; position:relative; width:265px; height:72px; overflow:hidden; font-size: 2.2em;
+	}
+  h2#logo a span {
+	   display:block; position:absolute; left:0; top:0; z-index:1; width:284px; height:84px; margin:0; padding:0; background:url('logo.png') top left no-repeat;
+	}
+
+/* Vlastnosti textu */
+#vpravo p {
+  line-height: 24px; font-size: 15px; text-indent: 20px; margin: 10px; padding: 3px 10px;
+}
+
+h1, h2 {
+  font-family: Arial, lucida, sans-serif;  font-weight: normal; margin: 20px 10px 0 20px;
+}
+
+h1 {
+  font-size: 1.8em; color: #5D6675;
+}
+a {
+	color: #5677ba;
+}
+a:hover {
+	color: maroon;
+}
+.f-right {
+  float: right;
+}
+.f-left {
+  float: left;
+}
+
+h2 {
+   font-size: 1.2em; color: #5677ba;
+}
+
+h3 {
+   font-weight: bold; font-size: 1.0em;
+}
+pre {
+  border: 1px solid black; padding: 5px; background-color: #FEFFB9; margin: 10px 20px;
+}
+#vpravo ul, ol {
+  padding: 10px 10px 10px 20px; margin: 0 10px 0 40px;
+}
+.comment {
+  font-style: italic; color: #C0C0C0;
+}
+#vpravo img {
+  margin: 5px 0 5px 50px; border: 3px solid #C0C0C0;
+}
+#vpravo h3 {
+  margin: 10px 0 5px 20px;
+}
+#vpravo ul li ul {
+  margin-left: 5px;
+}
+#dat-typy {
+  font-family: "Arial"; margin: 10px 0 10px 20px;
+}
+#dat-typy caption {
+  background: #C0C0C0; padding: 5px; border-bottom: 1px solid black;
+}
+#dat-typy td, #dat-typy th {
+  padding: 4px; border: 1px solid black;
+}
+pre b {
+  color: navy;
+}
+

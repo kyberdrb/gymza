@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899/12/30 00:00:00.000.dfm,E:\Tvary3\Upravit_Dialog.dfm=E:\Tvary3\Unit2.dfm</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.049,=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.571,\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\RAD Studio\Projects\Unit1.pas=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary\Unit1.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.056,\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary3\F_Aplikacia.pas=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary2\F_Aplikacia.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.130,\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\RAD Studio\Projects\Project2.dproj=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary\GrafickeTvary.dproj</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.977,\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary3\GrafickeTvary.dproj=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary3\GrafickeTvary.dproj</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.477,\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary3\GrafickeTvary.dproj=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary2\GrafickeTvary.dproj</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.056,\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary3\F_Aplikacia.dfm=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary2\F_Aplikacia.dfm</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.pas,E:\Tvary3\Upravit_Dialog.pas=E:\Tvary3\Unit2.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.055,\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary3\DataTvary.pas=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary2\DataTvary.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.746,\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary2\Unit1.pas=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary2\F_Aplikacia.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.325,=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary\Unit2.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.571,\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\RAD Studio\Projects\Unit1.dfm=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary\Unit1.dfm</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.746,\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary2\Unit1.dfm=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary2\F_Aplikacia.dfm</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.649,\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary\Unit2.pas=\\gymzaserver2\Data$\ucitelia\cerveny\My Documents\Vyučovanie\4Roc\Tvary\DataTvary.pas</Transaction>
+  </Transactions>
+</BorlandProject>

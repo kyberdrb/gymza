@@ -1,0 +1,451 @@
+unit DataTvary;
+
+interface
+
+uses
+  TeeProcs, Types, Classes, Controls, Graphics;
+
+type
+  //vymenovanie tvarov
+  TDruhTvaru = (tvNeurceny, tvObdlznik, tvOval, tvTrojuholnikP, tvSipka);
+
+  TTvar = class(TObject)
+  private
+    FDlzkaSpice: Integer;
+    FDruhTvaru: TDruhTvaru;
+    FFarba: TColor;
+    FFarbaCiary: TColor;
+    FHore: Integer;
+    FHrubkaCiary: Byte;
+    FHrubkaSpice: Integer;
+    FSirka: Integer;
+    FVlavo: Integer;
+    FVyska: Integer;
+    FZobrazit: Boolean;
+  protected
+    function GetNazov: String; virtual;
+  public
+    constructor Create;
+    function PointInTvar(P: TPoint) : Boolean; virtual; abstract;
+    procedure LoadFromStream (AStream : TFileStream); virtual;
+    procedure Nakreslit(ACanvas: TCanvas); virtual;
+    procedure SaveToStream (AStream : TFileStream); virtual;
+    property DlzkaSpice: Integer read FDlzkaSpice write FDlzkaSpice;
+    property DruhTvaru: TDruhTvaru read FDruhTvaru;
+    property Farba: TColor read FFarba write FFarba;
+    property FarbaCiary: TColor read FFarbaCiary write FFarbaCiary;
+    property Hore: Integer read FHore write FHore;
+    property HrubkaCiary: Byte read FHrubkaCiary write FHrubkaCiary;
+    property HrubkaSpice: Integer read FHrubkaSpice write FHrubkaSpice;
+    property Nazov: String read GetNazov;
+    property Sirka: Integer read FSirka write FSirka;
+    property Vlavo: Integer read FVlavo write FVlavo;
+    property Vyska: Integer read FVyska write FVyska;
+    property Zobrazit: Boolean read FZobrazit write FZobrazit;
+  end;
+
+  TObdlznik = class(TTvar)
+  protected
+    function GetNazov: String; override;
+  public
+    constructor Create;
+    function PointInTvar(P: TPoint) : Boolean; override;
+    procedure Nakreslit(ACanvas: TCanvas); override;
+  end;
+
+  TOval = class(TTvar)
+  protected
+    function GetNazov: String; override;
+  public
+    constructor Create;
+    function PointInTvar(P: TPoint) : Boolean; override;
+    procedure Nakreslit(ACanvas: TCanvas); override;
+  end;
+
+  TTrojuholnikP = class(TTvar)
+  protected
+    function GetNazov: String; override;
+  public
+    constructor Create;
+    function PointInTvar(P: TPoint) : Boolean; override;
+    procedure Nakreslit(ACanvas: TCanvas); override;
+  end;
+
+  TSipka = class(TTvar)
+  protected
+    function GetNazov: String; override;
+  public
+    constructor Create;
+    function PointInTvar(P: TPoint) : Boolean; override;
+    procedure Nakreslit(ACanvas: TCanvas); override;
+  end;
+
+  TZoznamTvarov = class(TObject)
+  private
+    FList: TList;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    function GetTvar(Index: Integer): TTvar;
+    function GetTvarPoint(P: TPoint) : TTvar;
+    procedure SaveToStream (ANazovSuboru: String);
+	  procedure LoadFromStream(ANazovSuboru: String);
+    procedure OdstranitTvar(Index: Integer);
+    function PridatTvar(DruhTvaru: TDruhTvaru): TTvar;
+    procedure Prekreslit(Canvas: TCanvas);
+    procedure ZmazatVsetko;
+  end;
+
+implementation
+
+uses
+  SysUtils;
+
+
+
+{$Region ' TTvar                                                              '}
+
+constructor TTvar.Create;
+begin
+  inherited Create;
+  FDruhTvaru := tvNeurceny;
+  FVlavo := 10;
+  FHore := 10;
+  FSirka := 100;
+  FVyska := 100;
+  FFarba := clWhite;
+  FFarbaCiary := clBlack;
+  FHrubkaCiary := 2;
+  FZobrazit := True;
+end;
+
+function TTvar.GetNazov: String;
+begin
+  Result := 'Neurceny';
+end;
+
+procedure TTvar.Nakreslit(ACanvas: TCanvas);
+begin
+    with ACanvas do
+    begin
+      Pen.Color := FarbaCiary;
+      Pen.Width := HrubkaCiary;
+      Brush.Color := Farba;
+    end;
+end;
+
+//ukladanie projektu - parametre
+procedure TTvar.SaveToStream(AStream: TFileStream);
+begin
+  with AStream do
+    begin
+      Write(FVlavo, SizeOf(FVlavo));
+      Write(FHore, SizeOf(FHore));
+      Write(FSirka, SizeOf(FSirka));
+      Write(FVyska, SizeOf(FVyska));
+      Write(FFarba, SizeOf(FFarba));
+      Write(FFarbaCiary, SizeOf(FFarbaCiary));
+      Write(FHrubkaCiary, SizeOf(FHrubkaCiary));
+      Write(FZobrazit, SizeOf(FZobrazit));
+      Write(FDlzkaSpice, SizeOf(FDlzkaSpice));
+      Write(FHrubkaSpice, SizeOf(FHrubkaSpice));
+    end;
+end;
+
+//otvaranie projektu - parametre
+procedure TTvar.LoadFromStream(AStream: TFileStream);
+begin
+  with AStream do
+    begin
+      Read(FVlavo, SizeOf(FVlavo));
+      Read(FHore, SizeOf(FHore));
+      Read(FSirka, SizeOf(FSirka));
+      Read(FVyska, SizeOf(FVyska));
+      Read(FFarba, SizeOf(FFarba));
+      Read(FFarbaCiary, SizeOf(FFarbaCiary));
+      Read(FHrubkaCiary, SizeOf(FHrubkaCiary));
+      Read(FZobrazit, SizeOf(FZobrazit));
+      Read(FDlzkaSpice, SizeOf(FDlzkaSpice));
+      Read(FHrubkaSpice, SizeOf(FHrubkaSpice));
+    end;
+end;
+{$EndRegion}
+
+{$Region ' TObdlznik                                                          '}
+
+constructor TObdlznik.Create;
+begin
+  inherited Create;
+  FDruhTvaru := tvObdlznik;
+end;
+
+function TObdlznik.GetNazov: String;
+begin
+  Result := 'Obdåžnik';
+end;
+
+procedure TObdlznik.Nakreslit(ACanvas: TCanvas);
+begin
+  if Zobrazit then
+  begin
+    inherited Nakreslit(ACanvas);
+    ACanvas.Rectangle(Vlavo, Hore, Vlavo + Sirka, Hore + Vyska);
+  end;
+end;
+
+function TObdlznik.PointInTvar(P: TPoint) : Boolean;
+var
+  P1, P2, P3, P4: TPoint;
+begin
+  Result := PointInPolygon(P, [P1, P2, P3, P4]);
+end;
+
+{$EndRegion}
+
+{$Region ' TOval                                                              '}
+
+constructor TOval.Create;
+begin
+  inherited Create;
+  FDruhTvaru := tvOval;
+end;
+
+function TOval.GetNazov: String;
+begin
+  Result := 'Ovál';
+end;
+
+
+
+procedure TOval.Nakreslit(ACanvas: TCanvas);
+begin
+  if Zobrazit then
+  begin
+    inherited Nakreslit(ACanvas);
+    ACanvas.Ellipse(Vlavo, Hore, Vlavo + Sirka, Hore + Vyska);
+  end;
+end;
+
+function TOval.PointInTvar(P: TPoint): Boolean;
+var
+  P1, P2, P3, P4 : TPoint;
+begin
+  P1 := Point(FVlavo, FHore);
+  P2 := Point(FVlavo + FSirka, FHore);
+  P3 := Point(FVlavo + FSirka, FHore + FVyska);
+  P4 := Point(FVlavo, FHore + FVyska);
+  Result := PointInEllipse([P1, P2, P3, P4]);
+end;
+
+{$EndRegion}
+
+{$Region ' TTrojuholnikP                                                       '}
+
+constructor TTrojuholnikP.Create;
+begin
+  inherited Create;
+  FDruhTvaru := tvTrojuholnikP;
+end;
+
+function TTrojuholnikP.GetNazov: String;
+begin
+  Result := 'Pravouhlý trojuholník';
+end;
+
+procedure TTrojuholnikP.Nakreslit(ACanvas: TCanvas);
+var
+ P1, P2, P3: TPoint;
+begin
+  if Zobrazit then
+    begin
+      inherited Nakreslit(ACanvas);
+      P1:= Point(Vlavo, Hore);
+      P2:= Point(Vlavo, Hore+Vyska);
+      P3:= Point(Vlavo+Sirka, Hore+Vyska);
+      ACanvas.Polygon([P1, P2, P3]);
+    end;
+end;
+
+function TTrojuholnikP.PointInTvar(P: TPoint): Boolean;
+var
+  P1, P2, P3 : TPoint;
+begin
+  P1 := Point(Vlavo, Hore);
+  P2 := Point(Vlavo, Hore + Vyska);
+  P3 := Point(Vlavo + Sirka, Hore + Vyska);
+end;
+
+{$EndRegion}
+
+{$Region ' TSipka                                                       '}
+
+constructor TSipka.Create;
+begin
+  inherited Create;
+  FDruhTvaru := tvSipka;
+end;
+
+function TSipka.GetNazov: String;
+begin
+  Result := 'Šípka';
+end;
+
+procedure TSipka.Nakreslit(ACanvas: TCanvas);
+var
+  P1, P2, P3, P4, P5, P6, P7: TPoint;
+begin
+  if Zobrazit then
+    begin
+      inherited Nakreslit(ACanvas);
+      P1:= Point(Vlavo, Hore);
+      P2:= Point(Vlavo + Sirka, Hore);
+      P3:= Point(Vlavo + Sirka, Hore - HrubkaSpice);
+      P4:= Point(Vlavo + Sirka + DlzkaSpice, Hore + Vyska div 2);
+      P5:= Point(Vlavo + Sirka, Hore + Vyska + HrubkaSpice);
+      P6:= Point(Vlavo + Sirka, Hore + Vyska);
+      P7:= Point(Vlavo, Hore + Vyska);
+      ACanvas.Polygon([P1, P2, P3, P4, P5, P6, P7]);
+    end;
+end;
+
+function TSipka.PointInTvar(P: TPoint) : Boolean;
+var
+  P1, P2, P3, P4, P5, P6, P7: TPoint;
+begin
+  P1:= Point(Vlavo, Hore);
+  P2:= Point(Vlavo + Sirka, Hore);
+  P3:= Point(Vlavo + Sirka, Hore - HrubkaSpice);
+  P4:= Point(Vlavo + Sirka + DlzkaSpice, Hore + Vyska div 2);
+  P5:= Point(Vlavo + Sirka, Hore + Vyska + HrubkaSpice);
+  P6:= Point(Vlavo + Sirka, Hore + Vyska);
+  P7:= Point(Vlavo, Hore + Vyska);
+  PointInPolygon := ([P1, P2, P3, P4, P5, P6, P7]);
+end;
+
+{$EndRegion}
+
+{$Region ' TZoznamTvarov                                                      '}
+
+constructor TZoznamTvarov.Create;
+begin
+  inherited Create;
+  FList := TList.Create;
+end;
+
+destructor TZoznamTvarov.Destroy;
+begin
+  ZmazatVsetko;
+  FList.Free;
+  inherited Destroy;
+end;
+
+function TZoznamTvarov.GetTvar(Index: Integer): TTvar;
+begin
+//kontrola umiestnenia tvarov, priradi mu adresu, na ktoru ukazujeme v procedure Prekreslit
+  if (Index >= 0) AND (Index < FList.Count) then
+    Result := FList.Items[Index]
+  else
+    Result := nil;
+end;
+
+procedure TZoznamTvarov.OdstranitTvar(Index: Integer);
+begin
+
+end;
+
+function TZoznamTvarov.PridatTvar(DruhTvaru: TDruhTvaru): TTvar;
+begin
+  //funkcia na vytvorenie jednotlivych tvarov(objektov)
+  case DruhTvaru of
+    tvNeurceny:     Result:= TTvar.Create;
+    tvObdlznik:     Result:= TObdlznik.Create;
+    tvOval:         Result:= TOval.Create;
+    tvTrojuholnikP: Result:= TTrojuholnikP.Create;
+    tvSipka:        Result:= TSipka.Create;
+  end;
+  FList.Add(Result);
+end;
+
+procedure TZoznamTvarov.Prekreslit(Canvas: TCanvas);
+var
+  i: Integer;
+  Tvar: TTvar;
+begin
+  for i := 0 to FList.Count-1 do
+  begin
+    Tvar := FList.Items[i];
+    Tvar.Nakreslit(Canvas);
+  end;
+end;
+
+procedure TZoznamTvarov.ZmazatVsetko;
+begin
+
+end;
+
+
+//ukladanie projektu
+procedure TZoznamTvarov.SaveToStream (ANazovSuboru: String);
+var
+  AStream : TFileStream;
+  ATvar: TTvar;
+  APocet: Integer;
+  i: Integer;
+begin
+  AStream :=TFileStream.Create(ANazovSuboru, fmCreate);
+  APocet:=FList.Count;
+  AStream.Write(APocet, SizeOf(APocet));
+  for i := 0 to APocet -1 do
+  begin
+    ATvar := GetTvar(i);
+    AStream.Write(ATvar.FDruhTvaru, SizeOf(ATvar.FDruhTvaru));
+    ATvar.SaveToStream(AStream);
+  end;
+  AStream.Free;
+end;
+
+//otvaranie projektu
+procedure TZoznamTvarov.LoadFromStream(ANazovSuboru: String);
+var
+  AStream : TFileStream;
+  ATvar: TTvar;
+  APocet: Integer;
+  i: Integer;
+  DruhTvaru: TDruhTvaru;
+begin
+  ZmazatVsetko;
+  AStream :=TFileStream.Create(ANazovSuboru, fmOpenRead);
+  APocet:=FList.Count;
+  AStream.Read(APocet, SizeOf(APocet));
+  for i := 0 to APocet -1 do
+  begin
+    AStream.Read(DruhTvaru, SizeOf(DruhTvaru));
+    ATvar := PridatTvar(DruhTvaru);
+    ATvar.LoadFromStream(AStream);
+  end;
+  AStream.Free;
+end;
+
+//kontrolovat zo zoznamu tvary, na ktory som klikol
+function TZoznamTvarov.GetTvarPoint(P: TPoint) : TTvar;
+var
+  I, Idnex: Integer;
+  Tvar : TTvar;
+begin
+  Result := nil;
+  for I := FList.Count - 1 downto 0 do
+  begin
+    Tvar := FList.Items[i];
+    if Tvar.FZobrazit and Tvar.PointInTvar(P) then
+    begin
+      Result:= Tvar;
+      Exit;
+    end;
+  end;
+end;
+
+
+
+{$EndRegion}
+
+end.

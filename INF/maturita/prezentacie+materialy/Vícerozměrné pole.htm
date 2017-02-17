@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="cs">
+    <meta name="robots" content="all,follow">
+    <meta name="generator" content="PSPad editor, www.pspad.com">
+    <meta name="author" content="Josef Rybička">
+    <meta name="copyright" content="Josef Rybicka, all rights reserved">
+    <meta name="description" content="Základy programování v jazyce Pascal pro začátečníky">
+    <meta name="keywords" content="pascal, turbo pascal, programování, základy">
+    <link rel="stylesheet" media="screen, projection" href="V%C3%ADcerozm%C4%9Brn%C3%A9%20pole_files/pascal.css" type="text/css">
+    <link rel="stylesheet" media="print" href="V%C3%ADcerozm%C4%9Brn%C3%A9%20pole_files/pascal-print.css" type="text/css">
+    <title>Vícerozměrné pole</title>
+  </head>
+  
+  <body>
+  
+  <div id="main">
+      <div id="hlavicka">
+         <h2 id="logo"><a title="Hlavní strana" href="http://st.vse.cz/%7EXRYBJ15/index.htm">Turbo Pascal 7.0<span></span></a></h2>
+      </div>   
+
+      <div id="vpravo">
+        <h1>Vícerozměrné pole</h1>
+        <p>
+          Dvojrozměrné pole si můžeme představit jako tabulku nebo matici. Dobrá je
+          také představa, že pole je pole polí, vektor vektorů atd. Počet rozměrů
+          není omezen, takže můžeme používat například tří-, čtyř- i více rozměrná
+          pole. 
+        </p>  
+        <p>
+          Stejně jako jednorozměrné pole je potřeba matici nejprve nadeklarovat.
+          Klíčové slovo <strong>array</strong> zůstává, ale podle dohody se v rozsahu uvádí
+          jako první roměr řádky a jako druhý rozměr sloupce. Rozsahy jsou odděleny čárkou.
+        </p>
+<pre><b>var</b> A:<b>array</b> [1..10,1..0] <b>of</b> integer; <span class="comment">{Toto je matice 10x10}</span>
+</pre> 
+
+        <p>
+          Mezi nejčastější úlohy patří naplnění matice náhodnými čísly, výpis a provádění různých
+          operací s hodnotami. V tomto příkladě vytvoříme matici 10x10 přičemž poslední řádek bude tvořit
+          součet čísel ve sloupcích a poslední sloupec budou průměry řádků.
+        </p>
+<pre><b>program</b> matice;
+<b>const</b> max = 9;
+<b>var</b> A:<b>array</b> [1..10,1..10] <b>of</b> real;
+    r,s,ra:integer;
+    pom:real;
+
+<b>begin</b>
+
+randomize; <i style="color: gray">{Zavolat fukci pro spravne generovani cisel}</i>
+<i style="color: gray">{Naplnění matice}</i>
+<b>for</b> r:=1 <b>to</b> max <b>do</b> <b>begin</b>
+ <b>for</b> s:=1 to max <b>do</b>
+  A[r,s]:=Random(10)+1;
+<b>end;</b>
+
+<i style="color: gray">{Vypis matice}</i>
+writeln('vypis');
+<b>for</b> r:=1 <b>to</b> max <b>do</b> <b>begin</b>
+ <b>for</b> s:=1 <b>to</b> max <b>do</b>
+  write(A[r,s]:5:0);
+  writeln;
+  writeln;
+<b> end;</b>
+
+<i style="color: gray">{Součet ve spodni řadě}</i>
+<b>for</b> r:=1 to max <b>do</b>
+ <b>begin</b>
+  A[max+1,s]:=0;
+  <b>for</b> s:=1 <b>to</b> max <b>do</b>
+   A[max+1,s]:=A[max+1,s]+A[r,s];
+ <b>end</b>;
+
+<i style="color: gray">{Průměr v poslednim sloupci}</i>
+<b>for</b> r:=1 <b>to</b> max <b>do</b>
+ <b>begin</b>
+ pom:=0;
+
+  <b>for</b> s:=1 <b>to</b> max <b>do</b>
+   pom:=pom+A[r,s];
+   A[r,max+1]:=pom/max;
+ <b> end;</b>
+
+<i style="color: gray">{2. Výpis matice}</i>
+writeln('vypis2');
+<b>for</b> r:=1 <b>to</b> max+1 <b>do begin</b>
+ <b>for</b> s:=1 <b>to</b> max+1 <b>do</b>
+  write(A[r,s]:5:1);
+  writeln;
+  writeln;
+ <b>end;</b>
+ 
+readln;
+<b>end.</b>
+</pre> 
+
+      <p>
+        K jednotlivým položkám pole se přistupuje přes indexy. Položka matice A[1,2] znamená
+        číslo v prvním řádku a druhém sloupci, neboli má souřadnice 1,2. Řádky a sloupce nahradíme
+        proměnnými r,s. Zvyšováním <strong>s</strong> cyklem <strong>for</strong> naplňujeme řádky a tento cyklus obalíme
+        ještě jedním který po provedení vnitřního cyklu (naplnění řádku), zvýší proměnnou <strong>r</strong>, čímž
+        se přesuneme na další řádek. Každé položce jsme přiřadili náhodné číslo od 1 do 10.
+      </p>
+      </div>
+      <div id="vlevo">
+        <h3>Úvod</h3>
+        <ul>
+          <li><a href="http://st.vse.cz/%7EXRYBJ15/index.htm">Úvodní strana</a></li>
+          <li><a href="http://st.vse.cz/%7EXRYBJ15/o-jazyce-pascal.htm">O jazyce Pascal</a></li>
+        </ul>
+        <h3>Vývojové prostředí</h3>
+        <ul>
+          <li><a href="http://st.vse.cz/%7EXRYBJ15/prace-v-turbo-pascalu.htm">Práce v Turbo Pascalu</a></li>
+          <li><a href="http://st.vse.cz/%7EXRYBJ15/prvky-v-zakladni-nabidce.htm">Prvky v základní nabídce</a></li>
+        </ul>
+        <h3>Kapitoly</h3>
+        <ul>
+          <li><a href="http://st.vse.cz/%7EXRYBJ15/1-program-prirazovani.htm">1. program, přiřazování</a></li>
+          <li><a href="http://st.vse.cz/%7EXRYBJ15/operatory-konstanty-div-mod.htm">Operátory, konstanty, div, mod</a></li>
+          <li><a href="http://st.vse.cz/%7EXRYBJ15/resene-priklady-promenne-div-mod.htm">Řešené příklady - proměnné, div, mod</a></li>
+          <li><a href="http://st.vse.cz/%7EXRYBJ15/podmineny-prikaz.htm">Podmíněný příkaz</a></li>
+          <li><a href="http://st.vse.cz/%7EXRYBJ15/priklady-vetveni-programu.htm">Příklady větvení programu</a></li>
+          <li><a href="http://st.vse.cz/%7EXRYBJ15/prikazy-cyklu.htm">Příkazy cyklu</a></li>
+          <li><a href="http://st.vse.cz/%7EXRYBJ15/pole.htm">Pole</a></li>
+          <li><a href="http://st.vse.cz/%7EXRYBJ15/vicerozmerne-pole.htm">Vícerozměrné pole</a></li>
+          <li><a href="http://st.vse.cz/%7EXRYBJ15/podprogramy.htm">Podprogramy</a></li>
+          <li><a href="http://st.vse.cz/%7EXRYBJ15/retezce-datovy-typ-char-a-string.htm">Řetězce, datový typ char a string</a></li>
+        </ul>
+      </div>
+
+      <div id="paticka">
+          <p class="f-left">
+            © 2008 <a href="mailto:josef.rybicka@gmail.com">Josef Rybička</a>
+          </p>
+          <p class="f-right">
+            <a href="http://validator.w3.org/check?uri=referer" target="_blank"><img src="V%C3%ADcerozm%C4%9Brn%C3%A9%20pole_files/html_valid.gif" alt="Valid HTML 4.01 Transitional" border="0" height="15" width="80"></a>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="V%C3%ADcerozm%C4%9Brn%C3%A9%20pole_files/valid-css.png" alt="Valid CSS!" border="0" height="15" width="80"></a>
+          </p>
+      </div>
+    </div>
+
+
+
+
+</body></html>

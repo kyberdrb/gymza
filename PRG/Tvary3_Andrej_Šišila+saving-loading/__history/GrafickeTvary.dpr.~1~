@@ -1,0 +1,15 @@
+program GrafickeTvary;
+
+uses
+  Forms,
+  F_Aplikacia in '..\Tvary2\F_Aplikacia.pas' {Form1},
+  DataTvary in '..\Tvary2\DataTvary.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

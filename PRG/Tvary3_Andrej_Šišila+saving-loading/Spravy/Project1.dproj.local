@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2012.11.04 19:07:11.968.pas,E:\Programovanie\Delphi 2007\Unit1.pas=E:\Programovanie\Delphi XE\Spravy\Unit1.pas</Transaction>
+    <Transaction>2012.11.04 19:07:11.968.dfm,E:\Programovanie\Delphi 2007\Unit1.dfm=E:\Programovanie\Delphi XE\Spravy\Unit1.dfm</Transaction>
+    <Transaction>2012.11.04 19:07:13.218.dproj,E:\Programovanie\Delphi 2007\Project1.dproj=E:\Programovanie\Delphi XE\Spravy\Project1.dproj</Transaction>
+    <Transaction>2012.11.04 20:14:09.625.pas,E:\Programovanie\Delphi XE\Spravy\Unit2.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,50 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm2 = class(TForm)
+    Memo1: TMemo;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+var
+  FTextFile: TextFile;
+  ZoznamTextu: String;
+  meno: String;
+  znak: Char;
+  pocet: Byte;
+begin
+  AssignFile(FTextFile, 'beispiel.txt');
+  Reset(FTextFile);
+  Memo1.Lines.Clear
+
+  while NOT EOF(FTextFile) do
+  begin
+    ReadLN(FTextFile, Fmeno);
+    Memo1.Lines.Add(FTextFile, Fmeno);
+    inc(FPocet);
+  end;
+
+Memo1.Lines.Add('tento subor ma' IntToStr() 'riadkov');
+
+end;
+
+end.

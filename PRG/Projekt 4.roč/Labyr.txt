@@ -1,0 +1,25 @@
+30 20  velkost bludiska
+1 1     start
+16 12  ciel
+ x      xx          xx        
+ x x  xxx   xxx x x    xxx  x 
+   xxxx x  xxxx   x xxxxxx xx 
+xx x         xx   x  xx    x  x 
+ x     x  x  x   xx   xxx xxx
+ xxxxx x xx  xx xxxx  x    x    
+   x   x    x     xxx xx  xxx   
+   x  xx x     xx   x  xx  x  x
+x xxx x xxxxxxx   x  x x      x
+      x       xxxxxxxx  x  xxxx
+ xxx  x  x   xxx    xxx x    xx
+   xxxx x  xx     xxx   x  xxx  
+x     x xx  x      xx   x xxxxx
+x  x xx  x xx xxxx x  xxx   xx
+  xx x  xx xx xx   x   xxxx  xx
+x xx  x  x     xxxxx xxxx xx x   
+x  xx xx xxxxxxx         x
+xx       xx  x xxx xxx xx   xxx
+   xxxx        xxx  xx  xxx xxx
+x   xx     xxx     xx        xx
+
+

@@ -1,0 +1,21 @@
+Z 15 metrovej jamy vychádza slimák spôsobom 5 m cez ïeò hore, sle 4 m dolu,
+lebo sa bojí.
+Za ko¾ko dní slimák vyjde z jamy?
+Riešenie:
+Slimák vyjde z jamy za 11 dní.
+
+-15m      11.deò slimák koneène vyjde z jamy
+-14
+-13
+-12
+-11
+-10
+-9
+-8
+-7
+-6       2.deò
+-5       1.deò
+-4
+-3
+-2       2. noc  
+-1       1. noc     

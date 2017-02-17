@@ -1,0 +1,86 @@
+.sponzorDetail{
+	background-image: url(http://static.mediacentrum.sk/referaty.sk/images/hline.gif);
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+    margin: 15px 0px 5px 0px;
+    padding: 15px 0px 15px 0px;
+	text-align: left;
+	}
+
+.sponzorDetail .blockTitle3 {
+	margin: 0px 0px 5px 0px;
+	}
+
+.sponzorDetail .blockTitle3 a{
+	 font-size: 11px;
+	 font-style: italic;
+	 color: #BCBCBC;
+    font-weight: normal;
+	}
+
+.sponzorDetail .item{
+	display: block;
+	height: auto;
+	padding: 0px 0px 5px 0px;
+	margin: 3px 0px;
+	font-size: 12px;
+	line-height: 18px;
+	color: #454236;
+}
+
+.sponzorDetail .item .title{
+	padding: 0px 0px 0px 0px;
+	}
+
+.sponzorDetail .item .annotation{
+	padding: 0px 0px 0px 0px;
+	}
+
+.sponzorDetail .item .title a{
+	color: #003366;
+	font-weight: bold;
+	}
+
+.sponzorDetail .item .annotation{
+	padding: 0px 0px 0px 0px;
+	}
+
+.sponzorDetail .item .info{
+	}
+
+.sponzorDetail .title{
+	font-size: 12px;
+	font-weight: normal;
+	color: #525F78;
+	padding: 0px 0px 5px 0px;
+	}
+
+.sponzorDetail .item .annotation p{
+	color: #000;
+	font-size: 12px;
+	text-decoration: none;
+	margin: 0px;
+	}
+
+
+.sponzorDetail .item .info a{
+	font-size: 12px;
+	color: #8d8d8d;
+	text-decoration: underline;
+	}
+
+.sponzorDetail .item .info a:hover{
+	font-size: 12px;
+	color: #000;
+	text-decoration: underline;
+	}
+
+.sponzorDetail .item .info span{
+	font-size: 12px;
+	color: #8d8d8d;
+	margin-left: 20px;
+	}
+
+.article-cols{
+	background: none;
+	}

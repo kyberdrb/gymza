@@ -1,0 +1,48 @@
+.Cr-Body {
+	background: #280A08 url("/Client.Images/Creative/20100920/bg-page.jpg") no-repeat top center;
+}
+
+.Cr-Body #page-navigation,
+.Cr-Body #page-footer
+{
+	background: transparent;
+}
+.Cr-Body #advert-ahead,
+.Cr-Body #page-navigation .advert-label,
+.Cr-Body #navigation
+{
+	color: #cccccc;
+}
+
+
+.Cr-Body #page-footer
+{
+	color: #cccccc;
+}
+
+.Cr-Body #navigation a,
+.Cr-Body #navigation a:hover,
+.Cr-Body #navigation a:visited
+{
+	color: #ffffff;
+}
+
+.Cr-Body #page-footer a,
+.Cr-Body #page-footer a:hover,
+.Cr-Body #page-footer a:visited
+{
+	color: #cccccc;
+}
+
+.Cr-Body #page-navigation .advert-label
+{
+	background-image: url(/Client.Images/Creative/20100920/bg-advert-label-90.gif);
+}
+
+.Cr-Body #page-data {
+	background: #fafafa url(/Client.Images/Creative/20100920/bg-page-data-top.gif) top center no-repeat;
+}
+
+.Cr-Body #cpbooks {
+	background: #280A08 url(/Client.Images/Creative/20100920/bg-page-promo.gif) 0px 0px no-repeat;
+}

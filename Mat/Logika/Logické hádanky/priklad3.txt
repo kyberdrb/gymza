@@ -1,0 +1,10 @@
+Je 1. miestnos a 2. miestnos. V 1. miestnosti sú 3 vypínaèe, 2. mistnosti sú
+3. iarovky. Z miestnosti do miestnosti nie je vidno.
+Ako zistíš, ktorı vypínaè je od ktorého svetla? 
+Do miestnosti môeš vôj len raz!
+Riešenie:
+Zapnem 1. vypínaè. Poèkám dlhší èas, aby sa iarovka rozhorúèila.
+Potom ho vypnem a zapnem 2. vypínaè.Vôjdem do 2. miestnosti. iarovka,
+ktorú som zapol ako 1. je rozhorúèená, iarovka, ktorú som zasvietil
+2. vypínaèom je rozsvietená a iarovka, ktorú som nezasvietil
+je chladná a nesvieti.

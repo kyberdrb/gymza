@@ -1,0 +1,22 @@
+zadat cislo do spineditu
+zistit ci po deleni dvojkou nedava zvysok
+ak nie nakresli ciernu ciaru
+posun kurzor o 10 pixelov doprava
+ak ano nakresli cervenu ciaru
+posun kurzor o 10 pixelov doprava
+
+
+potrebujem 2 procedury - jednu pre parne a jednu pre neparne cisla
+
+
+parne cisla -> SpinEdit1.Value mod 2 = 0
+zaciatocna x suradnica = 0
+x suradnica ma v cykle rast o 20
+
+neparne cisla -> else
+zaciatocna x suradnica = 10
+x suradnica ma v cykle rast o 20
+
+konstanty
+y suradnica je pri vsetkych parnych cislach 100
+y suradnica je pri vsetkych neparnych cislach 200

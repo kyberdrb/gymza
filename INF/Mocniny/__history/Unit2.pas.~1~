@@ -1,0 +1,61 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Spin;
+
+type
+  TForm2 = class(TForm)
+    Button1: TButton;
+    SpinEdit1: TSpinEdit;
+    Label1: TLabel;
+    SpinEdit2: TSpinEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+    function mocnina(num, exp: integer): integer;
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+begin
+ Label1.Caption:= IntToStr(mocnina(SpinEdit1.Value, SpinEdit2.Value));
+end;
+
+function TForm2.mocnina(num, exp: Integer): integer;
+var
+  tempnum, i: integer;
+  tempnumR: real;
+begin
+  tempnum:=1;
+  tempnumR:=1;
+  for I := 1 to exp do
+  begin
+
+    if exp < 0 then
+    begin
+      tempnumR:= tempnumR*num;
+      Result:= Round(1 / tempnumR);
+    end
+
+    else
+    begin
+      tempnum:= tempnum*num;
+    end;
+    Result:= tempnum;
+  end;
+end;
+
+end.

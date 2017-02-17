@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title>Tabuľky</title>
+  </head>
+  <body vlink="green" alink="red"> 
+  <h2>Tabuľky</h2>
+  
+  <table border="2">
+      <tr> <!-- definícia prvého riadku -->
+          <td>Stĺpec 1, riadok 1</td>
+          <td>Stĺpec 2, riadok 1</td>
+      </tr> <!-- ukončenie prvého riadku -->
+      <tr> <!-- definícia druhého riadku -->
+          <td>Stĺpec 1, riadok 2</td>
+          <!--Táto bunka zostane prázdna -->
+      </tr> <!-- ukončenie druhého riadku -->
+    </table>     
+    
+    <table border="3">
+      <tr>
+          <th>Dopoludnie</th> <!-- definícia riadku s hlavičkou -->
+          <th>Popoludnie</th>
+      </tr>
+      <tr> <!-- definícia prvého riadku -->
+          <td>Vstať a umyť sa</td>
+          <td>Ísť na prechádzku</td>
+      </tr> <!-- ukončenie prvého riadku -->
+      <tr> <!-- definícia druhého riadku -->
+          <td>Uvariť obed</td>
+          <td>Nakúpiť v obchode</td>
+      </tr>
+    </table>
+    
+    <table border="2">
+      <tr> <!-- definícia prvého riadku -->
+      <th>Ráno</th>
+      <td>Vstať a umyť</td>
+      <td>Nakúpiť v obchode</td>
+      </tr>
+      <tr> <!-- definícia druhého riadku -->
+      <th>Dopoludnie</th>
+      <td>Uvariť obed</td>
+      <td>Umyť nádoby</td>
+      </tr>
+      
+    </table>
+    
+    <table border="1">
+      <caption>Denný plán</caption>
+      <!--značka CAPTION môže mať parametre ALIGN (left, center, right), ktorá určuje horizontálne zarovnanie
+                                            VALIGN (top, bottom), ktorá určuje zarovnanie nad/pod tabuľkou -->
+      <tr>
+          <th>Dopoludnie</th> <!-- definícia riadku s hlavičkou -->
+          <th>Popoludnie</th>
+      </tr>
+      <tr> <!-- definícia prvého riadku -->
+          <td>Vstať a umyť sa</td>
+          <td>Ísť na prechádzku</td>
+      </tr> <!-- ukončenie prvého riadku -->
+      <tr> <!-- definícia druhého riadku -->
+          <td>Uvariť obed</td>
+          <td>Nakúpiť v obchode</td>
+      </tr>
+    </table>
+    
+    <!-- zarovnanie tabuľky -->
+    <table align="left" border="1">
+      <tr>
+          <th>Biele mäso</th>
+          <th>Červené mäso</th>
+      </tr>
+      <tr>
+          <td>Kuracie</td>
+          <td>Braučové</td>
+      </tr>
+    </table>
+    
+    <table align="right" border="1">
+      <tr>
+          <th>Biele mäso</th>
+          <th>Červené mäso</th>
+      </tr>
+      <tr>
+          <td>Kuracie</td>
+          <td>Braučové</td>
+      </tr>
+    </table>
+    
+    <table align="center" border="1" bgcolor="lightgreen"> 
+    <!--tabuľka môže mať pre pozadie aj parameter BGCOLOR-->
+    <!--farba ohraničenia tabuľky sa nastavuje cez parameter BORDERCOLOR-->
+      <tr>
+          <th>Biele mäso</th>
+          <th>Červené mäso</th>
+      </tr>
+      <tr>
+          <td>Kuracie</td>
+          <td>Braučové</td>
+      </tr>
+    </table>
+    
+    <table border="1" cellspacing="10"> <!-- cellspacing je vzdialenosť medzi políčkami-->
+      <tr>
+          <th>Biele mäso</th>
+          <th>Červené mäso</th>
+      </tr>
+      <tr>
+          <td>Kuracie</td>
+          <td>Bravčové</td>
+      </tr>
+    </table>
+    
+    <table border="1" cellpadding="10"> <!-- cellpadding určuje oddialenie textuod vnútorného okraja-->
+      <tr>
+          <th>Biele mäso</th>
+          <th>Červené mäso</th>
+      </tr>
+      <tr>
+          <td>Kuracie</td>
+          <td>Bravčové</td>
+      </tr>
+    </table>
+    
+    <table border="1" cellpadding="10" cellspacing="10">
+      <tr>
+          <th>Biele mäso</th>
+          <th>Červené mäso</th>
+      </tr>
+      <tr>
+          <td>Kuracie</td>
+          <td>Bravčové</td>
+      </tr>
+    </table>
+    
+    <table border="1" cellpadding="3" cellpadding="0"> <!--bunky sú prirazené tesne k sebe-->
+      <tr>
+          <th>Biele mäso</th>
+          <th>Červené mäso</th>
+      </tr>
+      <tr>
+          <td>Kuracie</td>
+          <td>Bravčové</td>
+      </tr>
+    </table>
+    
+    <table border="1" frame="void"> <!--parameter frame môže mať vlastnosti: VOID, ABOVE, BELOW, LHS, RHS, HSIDES, VSIDES-->
+      <caption>Typy ohraničenia tabuľky</caption>
+        <tr>
+          <th>Zelenina</th>
+          <th>Ovocie</th>
+        </tr>
+        <tr>
+          <td>Kapusta</td>
+          <td>Gruška</td>
+        </tr>
+    </table>        
+    
+    <table border="1" rules="none"><!--parameter RULES upravuje vnútorné okraje tabuľky. NONE-žiadne vnútorné okraje-ohraničenie zvonku zostáva. COLS-necháva iba čiary na stĺpcce. ROWS-necháva iba čiary na riadky. -->
+      <caption>Typy ohraničenia tabuľky</caption>
+        <tr>
+          <th>Zelenina</th>
+          <th>Ovocie</th>
+        </tr>
+        <tr>
+          <td>Kapusta</td>
+          <td>Gruška</td>
+        </tr>
+    </table>
+    
+    <table border="1" cols="4"> <!--parameter COLS určuje počet stĺpcov v tab. Má len pomocnú funkciu.--> 
+      <caption>Typy ohraničenia tabuľky</caption>
+        <tr>
+          <th>Zelenina</th>
+          <th>Ovocie</th>
+        </tr>
+        <tr>
+          <td>Kapusta</td>
+          <td>Gruška</td>
+        </tr>
+    </table>
+    
+    <table border="1" width="50%"><!--parameter WIDTH upravuje šírku tabuľky. Udáva sa v jednoduchom čísle alebo v %-->
+      <caption>Typy ohraničenia tabuľky</caption>
+        <tr>
+          <th>Zelenina</th>
+          <th>Ovocie</th>
+        </tr>
+        <tr>
+          <td>Kapusta</td>
+          <td>Gruška</td>
+        </tr>
+    </table>
+     
+    <table border="1">
+      <tr bgcolor="aqua">      
+        <th>Dopoludie</th>
+        <th>Popoludnie</th>
+      </tr>
+      <tr bgcolor="orange">
+        <td>Vstať a umyť sa</td>
+        <td>Ísť na prechádzku</td>
+      </tr>
+      <tr bgcolor="yellow">
+        <td>Uvariť obed</td>
+        <td>Nakúpiť v obchode</td>
+      </tr>     
+    </table>
+    
+    <table border="3" width=50%>
+      <tr align="right">
+          <td>Dopoludnie</td>
+          <td>Popoludnie</td>
+      </tr>
+      <tr align="center">
+          <td>Vstať a umyť sa</td>
+          <td>Ísť na prechádzku</td>
+      </tr>
+      <tr align="left">
+          <td>Uvariť obed</td>
+          <td>Nakúpiť v obchode</td>
+      </tr>
+    </table>
+    
+    <!--Zlučovanie buniek-->
+    <table border="1" cellpadding="3">
+      <tr>
+        <th>Ráno</th>
+        <th>Dopoludnie</th>
+        <th>Poludnie</th>
+        <th>Popoludnie</th>
+        <th>Večer</th>
+      </tr>
+      <tr>
+        <td ROWSPAN="2">Budíček</td><!--Parameter ROWSPAN zlučuje bunky v riadku-->
+        <td>Nakúpiť</td>
+        <td>Obed</td>
+        <td>Prechádzka</td>
+        <td ROWSPAN="2">Večierka</td>
+      </tr>
+      <tr>
+        <td>Uvariť obed</td>
+        <td>Umyť riad</td>
+        <td>Čítať knihu</td>
+      </tr>  
+    </table>
+    
+    <table border="1" cellpadding="3">
+      <tr bgcolor="cyan">
+        <td>Ráno</td>
+        <td>Dopoludnie</td>
+        <td>Poludnie</td>
+        <td>Popoludnie</td>
+        <td>Večer</td>
+      </tr>
+      <colgroup bgcolor="yellow" span="5"> <!--spodné 2 riadky budú žlté-->
+      <tr>
+        <td rowspan="2">Budíček</td>
+        <td>Nakúpiť</td>
+        <td>Obed</td>
+        <td>Prechádzka</td>
+        <td rowspan="2">Večierka</td>
+      </tr>
+      <tr>
+        <td>Uvariť obed</td>
+        <td>Umyť riad</td>
+        <td>Čítať knihu</td>
+      </tr>  
+    </table>
+    
+    
+  </body>
+</html>
